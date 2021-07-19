@@ -2,13 +2,13 @@ import React from "react";
 import SignIn from "./components/SignIn";
 import Header from "./components/Header";
 
-const Home = () => {
+const HomeScreen = () => {
   return (
-    <>
+    <div>
       <Header />
       <SignIn />
-    </>
+    </div>
   );
 };
 
-export default Home;
+export default HomeScreen;
