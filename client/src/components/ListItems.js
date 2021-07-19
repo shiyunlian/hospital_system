@@ -1,33 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PeopleIcon from "@material-ui/icons/People";
-import BarChartIcon from "@material-ui/icons/BarChart";
 import LayersIcon from "@material-ui/icons/Layers";
+import LocalPharmacyIcon from "@material-ui/icons/LocalPharmacy";
 
 const ListItems = () => {
   return (
     <div>
       <List>
-        <ListItem button>
+        <ListItem button component={Link} to="/login">
           <ListItemIcon>
             <PeopleIcon />
           </ListItemIcon>
-          <ListItemText primary="Patients" />
+          <ListItemText primary="Patient" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/ward">
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
-          <ListItemText primary="Wards" />
+          <ListItemText primary="Ward" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/pharmacy">
           <ListItemIcon>
-            <BarChartIcon />
+            <LocalPharmacyIcon />
           </ListItemIcon>
-          <ListItemText primary="Reports" />
+          <ListItemText primary="Pharmacy" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/">
           <ListItemIcon>
             <LayersIcon />
           </ListItemIcon>
