@@ -1,7 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Home";
-import Dashboard from "./Dashboard";
+import HomeScreen from "./HomeScreen";
+import PatientScreen from "./PatientScreen";
+import WardScreen from "./WardScreen";
+import PharmacyScreen from "./PharmacyScreen";
 
 function App() {
   return (
@@ -9,12 +11,17 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <HomeScreen />
           </Route>
           <Route exact path="/login">
-            <Dashboard />
+            <PatientScreen />
           </Route>
-          <Route exact path="/patients"></Route>
+          <Route exact path="/ward">
+            <WardScreen />
+          </Route>
+          <Route exact path="/pharmacy">
+            <PharmacyScreen />
+          </Route>
         </Switch>
       </div>
     </Router>
