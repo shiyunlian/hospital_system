@@ -4,6 +4,7 @@ import HomeScreen from "./HomeScreen";
 import PatientScreen from "./PatientScreen";
 import WardScreen from "./WardScreen";
 import PharmacyScreen from "./PharmacyScreen";
+import AccountScreen from "./AccountScreen";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/pharmacy">
             <PharmacyScreen />
+          </Route>
+          <Route exact path="/account">
+            <AccountScreen />
           </Route>
         </Switch>
       </div>
