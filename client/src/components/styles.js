@@ -6,6 +6,10 @@ export default makeStyles((theme) => ({
   root: {
     display: "flex",
   },
+  card: {
+    paddingTop: 30,
+    paddingLeft: 20,
+  },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
   },

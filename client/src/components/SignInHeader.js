@@ -37,7 +37,6 @@ const SignInHeader = () => {
     setOpen(false);
   };
 
-  const handleProfileMenuOpen = () => {};
   return (
     <>
       <CssBaseline />
@@ -96,8 +95,9 @@ const SignInHeader = () => {
               edge="end"
               aria-label="account of current user"
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
               color="inherit"
+              component={Link}
+              to="/account"
             >
               <AccountCircle />
             </IconButton>
