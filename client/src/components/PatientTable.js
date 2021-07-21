@@ -22,7 +22,7 @@ function createData(
   diagnosis,
   hospitalized_date,
   ward,
-  address,
+  discharged_date,
   amount
 ) {
   return {
@@ -33,44 +33,44 @@ function createData(
     diagnosis,
     hospitalized_date,
     ward,
-    address,
+    discharged_date,
     amount,
   };
 }
 
 const rows = [
   createData(
-    1,
+    101,
     "John Doe",
     "M",
     "1980-1-1",
     "COVID-19",
     "7/1/2021",
-    "1",
+    "10",
     "8/1/2021",
     111.11
   ),
   createData(
-    2,
-    "John Doe",
-    "M",
-    "1980-1-1",
-    "COVID-19",
-    "7/1/2021",
-    "1",
-    "8/1/2021",
-    111.11
+    102,
+    "Jack Harry",
+    "F",
+    "2000-07-20",
+    "Fever",
+    "7/10/2021",
+    "11",
+    "7/12/2021",
+    500.50
   ),
   createData(
-    3,
-    "John Doe",
+    103,
+    "Emily Lee",
     "M",
-    "1980-1-1",
+    "1990-10-1",
     "COVID-19",
-    "7/1/2021",
-    "1",
-    "8/1/2021",
-    111.11
+    "7/15/2021",
+    "12",
+    "7/17/2021",
+    1500.30
   ),
 ];
 
@@ -129,7 +129,7 @@ export default function PatientTable() {
               <TableCell align="center">{row.diagnosis}</TableCell>
               <TableCell align="center">{row.hospitalized_date}</TableCell>
               <TableCell align="center">{row.ward}</TableCell>
-              <TableCell align="center">{row.address}</TableCell>
+              <TableCell align="center">{row.discharged_date}</TableCell>
               <TableCell align="center">${row.amount}</TableCell>
             </TableRow>
           ))}

@@ -1,14 +1,14 @@
 const oracledb = require("oracledb");
 
 // if oracle instant client is installed on mac
-oracledb.initOracleClient({
-  libDir: process.env.HOME + "/Downloads/instantclient_19_8",
-});
+//oracledb.initOracleClient({
+ // libDir: process.env.HOME + "/Downloads/instantclient_19_8",
+//});
 
 // if oracle instant client is installed on Windows
-// oracledb.initOracleClient({
-//     libDir:'C:\\oracle\\instantclient_19_8'
-// })
+oracledb.initOracleClient({
+     libDir:'C:\oraclexe\app\oracle\instantclient_19_11'
+ });
 
 async function run() {
   let connection;
