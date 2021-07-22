@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
-import EmployeeService from '../services/PatientService'
+//import EmployeeService from '../services/PatientService'
 import WardRecord from './WardRecord';
+import PatientService  from './PatientService';
+import { Route , withRouter} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
 
 class ListPatientComponent extends Component {
     constructor(props) {
@@ -20,10 +25,10 @@ class ListPatientComponent extends Component {
         });
     }
     viewPatient(id){
-        this.props.history.push(`/view-patient/${id}`);
+        this.props.history.push('/view-patient/${id}');
     }
     editPatient(id){
-        this.props.history.push(`/add-patient/${id}`);
+        this.props.history.push('/add-patient/${id}');
     }
 
     //Invokes the patient service calss method to fetch the patient from an API call
@@ -36,6 +41,7 @@ class ListPatientComponent extends Component {
 
     addPatient(){
         this.props.history.push('/add-patient/_add');
+        //this.props.history.push('/add-patient/${id}');
     }
 
     render() {
