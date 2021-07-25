@@ -16,6 +16,12 @@ const ListItems = () => {
           </ListItemIcon>
           <ListItemText primary="Patient" />
         </ListItem>
+        <ListItem button component={Link} to="/patients">
+          <ListItemIcon>
+            <PeopleIcon />
+          </ListItemIcon>
+          <ListItemText primary="Patient" />
+        </ListItem>
         <ListItem button component={Link} to="/ward">
           <ListItemIcon>
             <DashboardIcon />

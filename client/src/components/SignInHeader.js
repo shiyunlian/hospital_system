@@ -104,6 +104,8 @@ const SignInHeader = () => {
             <Button color="inherit" component={Link} to="/">
               Log Out
             </Button>
+
+     
           </div>
         </Toolbar>
       </AppBar>
@@ -122,6 +124,7 @@ const SignInHeader = () => {
         <Divider />
         <ListItems />
       </Drawer>
+      
     </>
   );
 };

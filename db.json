@@ -1,0 +1,35 @@
+{
+  
+    "patient": [
+      {
+        "id": 1,
+        "name": "Thanh Le",
+        "gender": "Male",
+        "dob": "02/03/1999",
+        "diagnosis": "flue",
+        "hospitalized_date": "07/14/2021",
+        "ward": "Rom 134, bed 12",
+        "discharged_date": "07/20/2021",
+        "bill": "$2000"
+      }
+    ],
+
+
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

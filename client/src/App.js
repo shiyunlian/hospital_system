@@ -5,6 +5,8 @@ import PatientScreen from "./PatientScreen";
 import WardScreen from "./WardScreen";
 import PharmacyScreen from "./PharmacyScreen";
 import AccountScreen from "./AccountScreen";
+import Patient from "./components/ListPatient";
+import AddPatient from "./components/patients/AddPatient";
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
           <Route exact path="/login">
             <PatientScreen />
           </Route>
+          <Route exact path="/patients">
+            <PatientScreen />
+          </Route>
           <Route exact path="/ward">
             <WardScreen />
           </Route>
@@ -25,6 +30,9 @@ function App() {
           </Route>
           <Route exact path="/account">
             <AccountScreen />
+          </Route>
+          <Route exact path="/patients/add">
+            <AddPatient />
           </Route>
         </Switch>
       </div>
