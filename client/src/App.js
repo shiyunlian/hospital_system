@@ -7,6 +7,7 @@ import PharmacyScreen from "./PharmacyScreen";
 import AccountScreen from "./AccountScreen";
 import Patient from "./components/ListPatient";
 import AddPatient from "./components/patients/AddPatient";
+import EditPatient from "./components/patients/EditPatient";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path="/patients/add">
             <AddPatient />
+          </Route>
+          <Route exact path="/patients/edit/:id">
+            <EditPatient />
           </Route>
         </Switch>
       </div>
