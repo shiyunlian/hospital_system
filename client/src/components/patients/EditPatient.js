@@ -3,6 +3,9 @@ import Axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { useHistory, useParams } from 'react-router-dom';
 
+/****************************************************************************************
+ * Create a file for editing a patient and create stateful component addPatient
+ *****************************************************************************************/
 
 const EditPatient = () => {
     let history = useHistory();

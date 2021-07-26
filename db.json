@@ -1,18 +1,6 @@
 {
   "patients": [
     {
-      "id": 1,
-      "patientID": "101",
-      "name": "Thanh Le",
-      "gender": "Male",
-      "dob": "02/03/1999",
-      "diagnosis": "flue",
-      "hospitalized_date": "07/14/2021",
-      "ward": "Rom 134, bed 12",
-      "discharged_date": "07/20/2021",
-      "bill": "$2000"
-    },
-    {
       "patientID": "120",
       "name": "Alex",
       "gender": "M",
@@ -35,6 +23,30 @@
       "discharged_date": "06/08/2021",
       "bill": "$1200",
       "id": 5
+    },
+    {
+      "patientID": "301",
+      "name": "Bill Jack",
+      "gender": "Male",
+      "dob": "05/20/1999",
+      "diagnosis": "Covid 19",
+      "hospitalized_date": "06/12/2021",
+      "ward": "Bed 109, Rom 207",
+      "discharged_date": "06/14/2021",
+      "bill": "$1200",
+      "id": 6
+    },
+    {
+      "patientID": "109",
+      "name": "FDSAFDSA",
+      "gender": "D",
+      "dob": "D",
+      "diagnosis": "D",
+      "hospitalized_date": "D",
+      "ward": "D",
+      "discharged_date": "D",
+      "bill": "D",
+      "id": 7
     }
   ],
   "posts": [

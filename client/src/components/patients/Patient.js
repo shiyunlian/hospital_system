@@ -22,6 +22,7 @@ const Patient = () => {
         loadPatient();
     }, []);
 
+    //load all patient information
     const loadPatient = async () =>{
         const res = await axios.get('http://localhost:8000/patients/${id}');
         setPatient(res.data);

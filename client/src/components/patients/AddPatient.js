@@ -2,7 +2,9 @@ import Axios from 'axios';
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 
-
+/****************************************************************************************
+ * Create a file for adding a patient and create stateful component addPatient
+ *****************************************************************************************/
 
 const AddPatient = () => {
     let history = useHistory();

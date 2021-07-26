@@ -11,6 +11,9 @@ import {
   Container
 } from 'reactstrap';
 
+/***************************************************************
+ Create a file for showing patient list and delete records
+ * ************************************************************/
 const Patient = () => {
     const [patients, setPatient] = useState([]);
 
@@ -18,11 +21,13 @@ const Patient = () => {
         loadPatients();
     }, []);
 
+    //Get request using Axios http
     const loadPatients = async () => {
         const result = await axios.get("http://localhost:8000/patients");
         setPatient(result.data.reverse());
     };
 
+    //delete patient records using axios http
     const deletePatient = async id => {
         await axios.delete('http://localhost:8000/patients/' + id);
         loadPatients();
