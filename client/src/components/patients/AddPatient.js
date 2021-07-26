@@ -24,6 +24,7 @@ const AddPatient = () => {
        setPatient({ ...patient, [e.target.name]: e.target.value });
    };
 
+   //post add patient record to db.json
    const onSubmit = async e => {
        e.preventDefault();
        await Axios.post("http://localhost:8000/patients", patient);
