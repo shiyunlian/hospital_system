@@ -31,13 +31,14 @@ const EditPatient = () => {
 
    const onSubmit = async e => {
     e.preventDefault();
-    await Axios.post("http://localhost:3003/patients", patient);
+    await Axios.post("http://localhost:8000/patients", patient);
     history.push("/patients");
 };
 
+//get edit patient information and post to db.json
    const loadPatient  = async () =>
    {
-       const result = await axios.get('http://localhost:3003/patients/${patient.id}');
+       const result = await axios.get('http://localhost:8000/patients/${patient.id}');
        setPatient(result.data);
    };
 
