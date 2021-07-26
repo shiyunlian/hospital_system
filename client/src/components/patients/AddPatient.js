@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 const AddPatient = () => {
     let history = useHistory();
-    const [patient, setUser] = useState({
+    const [patient, setPatient] = useState({
             patientID: '',
             name: '',
             gender: '',
@@ -21,12 +21,12 @@ const AddPatient = () => {
    const { patientID, name, gender, dob, diagnosis, hospitalized_date, ward, discharged_date, bill} = patient;
 
    const onInputChange = e => {
-       setUser({ ...patient, [e.target.name]: e.target.value });
+       setPatient({ ...patient, [e.target.name]: e.target.value });
    };
 
    const onSubmit = async e => {
        e.preventDefault();
-       await Axios.post("http://localhost:3000/patients", patient);
+       await Axios.post("http://localhost:8000/patients", patient);
        history.push("/patients");
    };
 
@@ -142,6 +142,7 @@ const AddPatient = () => {
             </form>
             </div>
         </div>
+    
     
         
     )
