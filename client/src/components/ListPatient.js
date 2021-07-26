@@ -19,19 +19,13 @@ const Patient = () => {
     }, []);
 
     const loadPatients = async () => {
-        const result = await axios.get("http://localhost:3000/patients");
+        const result = await axios.get("http://localhost:8000/patients");
         setPatient(result.data.reverse());
     };
 
     const deletePatient = async id => {
-        await axios.delete('http://localhost:3000/patients/${id}')
-        .then((result) => {
-            loadPatients();
-        })
-        .catch(() => {
-            alert('Error in the Code');
-        });
-       
+        await axios.delete('http://localhost:8000/patients/' + id);
+        loadPatients();
     };
 
 
@@ -41,7 +35,7 @@ const Patient = () => {
                 <h1>Patient Information</h1>
                 <Navbar color="dark" dark>
                     <Container>
-                    <NavbarBrand href="/patients">Patient Information</NavbarBrand>
+                    <NavbarBrand href="/patients">Patient List</NavbarBrand>
                     <Nav>
                         <Link className="btn btn-primary" to ="/patients/add">Add Patient</Link>
                     </Nav>
@@ -49,8 +43,7 @@ const Patient = () => {
 
                 </Navbar>
                 <div className = "row">
-                    {/*<button className="btn btn-primary" onClick={this.addPatient}> Add Patient</button>*/}
-                   {/* <NavLink className="btn btn-outline-light" to="/patient/add">Add patient</NavLink> */}
+                 
                  </div>
                  <br></br>
 
@@ -87,8 +80,7 @@ const Patient = () => {
                                     <td>{patient.bill}</td>
                                     <td>
                                         <Link class="btn btn-primary mr-2" 
-                                            to={'/patients/${patient.id}'}>View</
-                                            Link>
+                                            to={'/patients/${patient.id}'}>View</Link>
 
                                         <Link class="btn btn-outline-primary mr-2" 
                                             to={'/patients/edit/${patient.id}'}>Edit</Link>
