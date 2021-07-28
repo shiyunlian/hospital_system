@@ -12,7 +12,8 @@ const EditPatient = () => {
     const { id } = useParams();
     const [patient, setPatient] = useState({
         patientID: "",
-        name: "",
+        firstname: "",
+        lastname: "",
         gender: "",
         dob: "",
         diagnosis: "",
@@ -22,7 +23,7 @@ const EditPatient = () => {
         bill: ""
     });
 
-    const { patientID, name, gender, dob, diagnosis, hospitalized_date, ward, discharged_date, bill} = patient;
+    const { patientID, firstname, lastname, gender, dob, diagnosis, hospitalized_date, ward, discharged_date, bill} = patient;
 
    const onInputChange = e => {
        setPatient({ ...patient, [e.target.name]: e.target.value });
@@ -67,9 +68,20 @@ const EditPatient = () => {
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient Name"
-                                name="name"
-                                value={name}
+                                placeholder="Enter Patient First Name"
+                                name="firstname"
+                                value={firstname}
+                                onChange={ e => onInputChange(e)}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="Enter Patient Last Name"
+                                name="lastname"
+                                value={lastname}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
