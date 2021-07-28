@@ -48,5 +48,73 @@
       "bill": "D",
       "id": 7
     }
+  ],
+  "pharmacys": [
+    {
+      "pharmacyID": "120",
+      "name": "CVS",
+      "address": "123 One St, San Jose",
+      "id": 1
+    },
+    {
+      "pharmacyID": "121",
+      "name": "Walgreen",
+      "address": "456 Washington blvd, San Francisco",
+      "id": 3
+    },
+    {
+      "pharmacyID": "145",
+      "name": "CVS",
+      "address": "789 Columbus St, San Jose",
+      "id": 4
+    }
+  ],
+  "wards": [
+    {
+      "wardID": "121",
+      "bedNumber": "8",
+      "patientID": "120",
+      "undefined": "4",
+      "id": 3
+    },
+    {
+      "wardID": "110",
+      "bedNumber": "3",
+      "patientID": "125",
+      "id": 4
+    },
+    {
+      "wardID": "124",
+      "bedNumber": "6",
+      "patientID": "101",
+      "id": 5
+    },
+    {
+      "wardID": "102",
+      "bedNumber": "8",
+      "patientID": "101",
+      "id": 6
+    }
+  ],
+  "insurances": [
+    {
+      "patientID": "120",
+      "insuranceID": "121",
+      "insuranceNumber": "12321321432",
+      "name": "Kaiser",
+      "phone": "800111222",
+      "address": "123 One Street, San Jose",
+      "id": 1
+    },
+    {
+      "patientID": "125",
+      "insuranceID": "210",
+      "insuranceNumber": "12321321432",
+      "name": "Blue Shield",
+      "phone": "800900222",
+      "address": "234 BroadWat Street, San Jose",
+      "id": 2
+    }
+   
   ]
 }

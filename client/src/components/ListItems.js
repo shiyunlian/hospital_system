@@ -14,32 +14,46 @@ const ListItems = () => {
           <ListItemIcon>
             <PeopleIcon />
           </ListItemIcon>
-          <ListItemText primary="Patient" />
+          <ListItemText primary="Home" />
         </ListItem>
+
         <ListItem button component={Link} to="/patients">
           <ListItemIcon>
             <PeopleIcon />
           </ListItemIcon>
           <ListItemText primary="Patient" />
         </ListItem>
-        <ListItem button component={Link} to="/ward">
+
+        <ListItem button component={Link} to="/wards">
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
           <ListItemText primary="Ward" />
         </ListItem>
-        <ListItem button component={Link} to="/pharmacy">
+
+        <ListItem button component={Link} to="/pharmacys">
           <ListItemIcon>
             <LocalPharmacyIcon />
           </ListItemIcon>
           <ListItemText primary="Pharmacy" />
         </ListItem>
+
+        <ListItem button component={Link} to="/insurances">
+          <ListItemIcon>
+            <DashboardIcon />
+          </ListItemIcon>
+          <ListItemText primary="Insurance" />
+        </ListItem>
+
         <ListItem button component={Link} to="/">
           <ListItemIcon>
             <LayersIcon />
           </ListItemIcon>
           <ListItemText primary="More" />
         </ListItem>
+
+        
+
       </List>
     </div>
   );
