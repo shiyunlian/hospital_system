@@ -57,12 +57,13 @@ const Patient = () => {
                         <tr>
                             <th scope="col">Number</th>
                             <th scope="col">Patient ID</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
                             <th scope="col">Gender</th>
                             <th scope="col">DOB</th>
                             <th scope="col">Diagnosis</th>
                             <th scope="col">Hospitalized_date</th>
-                            <th scope="col">Ward</th>
+                            <th scope="col">wardID </th>
                             <th scope="col">Discharged_date</th>
                             <th scope="col">Bill</th>
                             <th>Action</th>
@@ -75,12 +76,13 @@ const Patient = () => {
                                 <tr>
                                     <th scope="row">{index+1}</th>
                                     <td>{patient.patientID}</td>
-                                    <td>{patient.name}</td>
+                                    <td>{patient.firstname}</td>
+                                    <td>{patient.lastname}</td>
                                     <td>{patient.gender}</td>
                                     <td>{patient.dob}</td>
                                     <td>{patient.diagnosis}</td>
                                     <td>{patient.hospitalized_date}</td>
-                                    <td>{patient.ward}</td>
+                                    <td>{patient.wardID}</td>
                                     <td>{patient.discharged_date}</td>
                                     <td>{patient.bill}</td>
                                     <td>
