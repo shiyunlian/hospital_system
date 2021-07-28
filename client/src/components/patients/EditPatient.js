@@ -152,7 +152,7 @@ const EditPatient = () => {
                             />
                         </div>
 
-                        <button className="btn btn-outline-warning btn-block">Update Patient</button>
+                        <button className="btn btn-primary btn-block">Update Patient</button>
             </form>
             </div>
         </div>
