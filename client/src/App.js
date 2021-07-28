@@ -13,9 +13,8 @@ import AddPharmacy from "./components/pharmacys/AddPharmacy";
 import AddWard from "./components/wards/AddWard";
 import EditPharmacy from "./components/pharmacys/EditPharmacy";
 import EditWard from "./components/wards/EditWard";
-
 import AddInsurance from "./components/insurances/AddInsurance";
-//import EditInsurance from "./components/insurances/EditInsurance";
+import EditInsurance from "./components/insurances/EditInsurance";
 
 
 function App() {
@@ -51,10 +50,10 @@ function App() {
             <AddPharmacy />
           </Route>
           <Route exact path="/wards/add">
-            <AddWard/>
+            <AddWard />
           </Route>
           <Route exact path="/insurances/add">
-            <AddInsurance/>
+            <AddInsurance />
           </Route>
           <Route exact path="/patients/edit/:id">
             <EditPatient />
@@ -63,7 +62,10 @@ function App() {
             <EditPharmacy />
           </Route>
           <Route exact path="/wards/edit/:id">
-            <EditWard/>
+            <EditWard />
+          </Route>
+          <Route exact path="/insurances/edit/:id">
+            <EditInsurance />
           </Route>
         
         </Switch>
