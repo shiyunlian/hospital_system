@@ -67,7 +67,6 @@ function App() {
           <Route exact path="/insurances/edit/:id">
             <EditInsurance />
           </Route>
-        
         </Switch>
       </div>
     </Router>
