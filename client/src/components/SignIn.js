@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Avatar,
   Button,
@@ -11,10 +11,26 @@ import {
   Grid,
   Typography,
   makeStyles,
+  unstable_createMuiStrictModeTheme,
 } from "@material-ui/core/";
 
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Image from "./image.jpg"; // Import using relative path
+
+import { PropTypes } from "prop-types";
+
+
+
+async function loginUser(credentials){
+  return fetch('http://localhost8080/signin' , {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+    .then(data =>data.json())
+}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -36,8 +52,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignIn = () => {
+
+const SignIn = ({setToken}) => {
   const classes = useStyles();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const token = await loginUser({
+      username,
+      password
+    });
+    setToken(token);
+  }
+  
 
   return (
     <>
@@ -57,7 +86,7 @@ const SignIn = () => {
               margin="normal"
               required
               fullWidth
-              id="ID"
+              id="ID" onChange={e => setUsername(e.target.value)}
               label="ID"
               name="ID"
               autoComplete="ID"
@@ -68,7 +97,7 @@ const SignIn = () => {
               margin="normal"
               required
               fullWidth
-              name="password"
+              name="password"  onChange={e => setPassword(e.target.value)}
               label="Password"
               type="password"
               id="password"
@@ -78,7 +107,7 @@ const SignIn = () => {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Button
+            <Button onSubmit={handleSubmit}
               type="submit"
               fullWidth
               variant="contained"
@@ -100,5 +129,9 @@ const SignIn = () => {
     </>
   );
 };
+
+SignIn.propTypes = {
+  setToken: PropTypes.func.isRequired
+}
 
 export default SignIn;

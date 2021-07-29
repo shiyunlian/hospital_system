@@ -5,8 +5,18 @@ import PatientScreen from "./PatientScreen";
 import WardScreen from "./WardScreen";
 import PharmacyScreen from "./PharmacyScreen";
 import AccountScreen from "./AccountScreen";
+import SignIn from "./components/SignIn";
+import React, {useState }  from "react";
+
 
 function App() {
+
+  const [token, setToken] = useState();
+
+  if(!token) {
+    return <SignIn setToekn={setToken} />
+  }
+  
   return (
     <Router>
       <div>
