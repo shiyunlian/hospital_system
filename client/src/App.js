@@ -14,9 +14,11 @@ function App() {
   const [token, setToken] = useState();
 
   if(!token) {
-    return <SignIn setToekn={setToken} />
+    alert('Incorrect Username/Password');
+    return <
+      SignIn setToekn={setToken} />
   }
-  
+
   return (
     <Router>
       <div>
