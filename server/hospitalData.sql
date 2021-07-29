@@ -62,11 +62,9 @@ create table patient(
     diagnosis varchar2(50) not null,
     hosptializedDate varchar2(50) not null,
     dischargedDate varchar2(50) not null,
-    insuranceId varchar2(50) not null,
     billId varchar2(50) not null,
     primary key(patientId),
     foreign key(billId) references bill(billId) on delete set null,
-    foreign key(insuranceId) references insurance(insuranceId) on delete set null
 );
 
 insert into patient values('P10001', 'Mike','Newton','1978-2-3','M','COVID-19','W1','B1','2020-12-8','2021-2-2','I101','B10001');
@@ -78,14 +76,14 @@ insert into patient values('P10006', 'John','Smith','1987-8-21','M','COVID-19','
 insert into patient values('P10007', 'Jack','Davis','1975-4-23','M','COVID-19','W2','B2','2020-12-8','2021-2-2','I104','B10004');
 insert into patient values('P10008', 'Steve','Miller','1967-12-3','M','COVID-19','W3','B12','2020-12-8','2021-2-2','I105','B10005');
 
-insert into patient values('P10001', 'Mike','Newton','1978-2-3','M','COVID-19','2020-12-8','2021-2-2','I101','B10001');
-insert into patient values('P10002', 'David','Taylor','1959-10-11','M','COVID-19','2020-12-8','2021-2-2','I102','B10002');
-insert into patient values('P10003', 'John','Smith','1987-8-21','M','COVID-19','2020-12-8','2021-2-2','I103','B10003');
-insert into patient values('P10004', 'Jack','Davis','1975-4-23','M','COVID-19','2020-12-8','2021-2-2','I104','B10004');
-insert into patient values('P10005', 'Steve','Miller','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','I105','B10005');
-insert into patient values('P10006', 'John','Smith','1987-8-21','M','COVID-19','2020-12-8','2021-2-2','I103','B10003');
-insert into patient values('P10007', 'Jack','Davis','1975-4-23','M','COVID-19','2020-12-8','2021-2-2','I104','B10004');
-insert into patient values('P10008', 'Steve','Miller','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','I105','B10005');
+insert into patient values('P10001', 'Mike','Newton','1978-2-3','M','COVID-19','2020-12-8','2021-2-2','B10001');
+insert into patient values('P10002', 'David','Taylor','1959-10-11','M','COVID-19','2020-12-8','2021-2-2','B10002');
+insert into patient values('P10003', 'John','Smith','1987-8-21','M','COVID-19','2020-12-8','2021-2-2','B10003');
+insert into patient values('P10004', 'Jack','Davis','1975-4-23','M','COVID-19','2020-12-8','2021-2-2','B10004');
+insert into patient values('P10005', 'Steve','Miller','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','B10005');
+insert into patient values('P10006', 'John','Smith','1987-8-21','M','COVID-19','2020-12-8','2021-2-2','B10003');
+insert into patient values('P10007', 'Jack','Davis','1975-4-23','M','COVID-19','2020-12-8','2021-2-2','B10004');
+insert into patient values('P10008', 'Steve','Miller','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','B10005');
 
 
 create table ward(
@@ -149,19 +147,32 @@ insert into pharmacy values('P110','Valu-Rite','9:00-18:00 Mon-Fri');
 create table insurance(
     insuranceId varchar2(50) not null,
     name varchar2(50) not null,
+    phoneNum varchar2(50) not null,
+    address varchar2(50) not null,
     primary key(insuranceId)
 );
 
-insert into insurance values('I101','UnitedHealth');
-insert into insurance values('I102','Kaiser Foundation');
-insert into insurance values('I103','Anthem Inc.');
-insert into insurance values('I104','Humana');
-insert into insurance values('I105','Centene Corp');
-insert into insurance values('I106','Cigna Health');
-insert into insurance values('I107','Guidewell Mut Holding');
-insert into insurance values('I108','Blue Cross of California');
-insert into insurance values('I109','Highmark Group');
-insert into insurance values('I110','Independence Health Group Inc.');
+insert into insurance values('I101','UnitedHealth','(888) 835-9637','4699 Old Ironsides Dr, Santa Clara, CA 95054');
+-- insert into insurance values('I102','Kaiser Foundation');
+-- insert into insurance values('I103','Anthem Inc.');
+-- insert into insurance values('I104','Humana');
+-- insert into insurance values('I105','Centene Corp');
+-- insert into insurance values('I106','Cigna Health');
+-- insert into insurance values('I107','Guidewell Mut Holding');
+-- insert into insurance values('I108','Blue Cross of California');
+-- insert into insurance values('I109','Highmark Group');
+-- insert into insurance values('I110','Independence Health Group Inc.');
+
+create table patientHasInsurance(
+    patientId varchar2(50) not null,
+    insuranceId varchar2(50) not null,
+    insuranceNum varchar2(50) not null,
+    foreign key(patientId) references patient(patientId) on delete set null,
+    foreign key(insuranceId) references insurance(insuranceId) on delete set null
+);
+
+insert into patientHasInsurance values('P10001','I101','1234567')
+
 
 create table bill(
     billId varchar2(50) not null,
