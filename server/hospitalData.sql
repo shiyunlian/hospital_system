@@ -60,7 +60,7 @@ create table patient(
     dob varchar2(50) not null,
     gender varchar2(50) not null,
     diagnosis varchar2(50) not null,
-    hosptializedDate varchar2(50) not null,
+    hospitalizedDate varchar2(50) not null,
     dischargedDate varchar2(50) not null,
     billId varchar2(50) not null,
     primary key(patientId),
@@ -153,15 +153,13 @@ create table insurance(
 );
 
 insert into insurance values('I101','UnitedHealth','(888) 835-9637','4699 Old Ironsides Dr, Santa Clara, CA 95054');
--- insert into insurance values('I102','Kaiser Foundation');
--- insert into insurance values('I103','Anthem Inc.');
--- insert into insurance values('I104','Humana');
--- insert into insurance values('I105','Centene Corp');
--- insert into insurance values('I106','Cigna Health');
--- insert into insurance values('I107','Guidewell Mut Holding');
--- insert into insurance values('I108','Blue Cross of California');
--- insert into insurance values('I109','Highmark Group');
--- insert into insurance values('I110','Independence Health Group Inc.');
+insert into insurance values('I102','Kaiser Foundation','(408) 703-8261','220 E Hacienda Ave, Campbell, CA 95008');
+insert into insurance values('I103','Anthem Inc.','(925) 927-6000','2121 N California Blvd, Walnut Creek, CA 94596');
+insert into insurance values('I104','Humana','(408) 675-3531','2712 Homestead Rd, Santa Clara, CA 95051');
+insert into insurance values('I105','Cigna Health','(800) 244-6224','1340 Treat Blvd #599, Walnut Creek, CA 94597');
+insert into insurance values('I106','Blue Cross of California','(415) 617-1700','2 Embarcadero Center, San Francisco, CA 94111');
+insert into insurance values('I107','Independence Health Group Inc.','(559) 802-1105','879 E Merritt Ave, Tulare, CA 93274');
+insert into insurance values('I108','Oscar Health Plan of California.','+13109096135','11620 Wilshire Blvd #900, Los Angeles, CA 90025');
 
 create table patientHasInsurance(
     patientId varchar2(50) not null,
@@ -171,8 +169,14 @@ create table patientHasInsurance(
     foreign key(insuranceId) references insurance(insuranceId) on delete set null
 );
 
-insert into patientHasInsurance values('P10001','I101','1234567')
-
+insert into patientHasInsurance values('P10001','I101','1234567');
+insert into patientHasInsurance values('P10002','I102','1234567');
+insert into patientHasInsurance values('P10003','I103','1234567');
+insert into patientHasInsurance values('P10004','I104','1234567');
+insert into patientHasInsurance values('P10005','I105','1234567');
+insert into patientHasInsurance values('P10006','I106','1234567');
+insert into patientHasInsurance values('P10007','I107','1234567');
+insert into patientHasInsurance values('P10008','I108','1234567');
 
 create table bill(
     billId varchar2(50) not null,
