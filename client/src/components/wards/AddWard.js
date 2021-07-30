@@ -11,10 +11,10 @@ const AddWard = () => {
     const [ward, setWard] = useState({
         wardID: '',
         bedNumber: '',
-        patientID: ''
+        patientId: ''
     });
     
-   const { wardID, bedNumber, patientID} = ward;
+   const { wardID, bedNumber, patientId} = ward;
 
    const onInputChange = e => {
        setWard({ ...ward, [e.target.name]: e.target.value });
@@ -61,8 +61,8 @@ const AddWard = () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Patient ID"
-                                name="patientID"
-                                value={patientID}
+                                name="patientId"
+                                value={patientId}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>

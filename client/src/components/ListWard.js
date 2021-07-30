@@ -69,7 +69,7 @@ const Ward= () => {
                                     <th scope="row">{index+1}</th>
                                     <td>{ward.wardID}</td>
                                     <td>{ward.bedNumber}</td>
-                                    <td>{ward.patientID}</td>
+                                    <td>{ward.patientId}</td>
                                     <td>
                                         <Link class="btn btn-outline-primary mr-2" 
                                             to={'/wards/edit/${ward.id}'}>Edit</Link>
