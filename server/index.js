@@ -11,7 +11,7 @@ const connAttrs = {
 app.use(cors());
 app.use(express.json());
 
-// configure proper initOracleClient
+// configure proper initOracleClient based on platform
 if (process.platform === "win32") {
   // Windows
   oracledb.initOracleClient({ libDir: "C:\\oracle\\instantclient_19_11" });
@@ -51,7 +51,7 @@ app.get("/patients", (req, res) => {
           res.status(500).send(
             JSON.stringify({
               status: 500,
-              message: "Error getting the user profile",
+              message: "Error getting the patient info",
               detailed_message: err.message,
             })
           );
