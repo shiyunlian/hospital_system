@@ -51,9 +51,6 @@ const ListItems = () => {
           </ListItemIcon>
           <ListItemText primary="More" />
         </ListItem>
-
-        
-
       </List>
     </div>
   );

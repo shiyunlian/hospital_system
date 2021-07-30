@@ -42,6 +42,7 @@
       "bill": "$1200",
       "insuranceID": "121"
       "id": 6
+<<<<<<< Updated upstream
     },
     {
       "patientID": "102",
@@ -56,6 +57,8 @@
       "bill": "$2700",
       "insuranceID": "210",
       "id": 7
+=======
+>>>>>>> Stashed changes
     }
   ],
   "pharmacys": [
@@ -132,15 +135,6 @@
       "phone": "510000000",
       "address": "124324 Third St, Santa Clara",
       "id": 3
-    },
-    {
-      "patientID": "321",
-      "insuranceID": "123",
-      "insuranceNumber": "43215432",
-      "name": "fdasf",
-      "phone": "fdsag",
-      "address": "afsd",
-      "id": 4
     },
     {
       "patientID": "211",
