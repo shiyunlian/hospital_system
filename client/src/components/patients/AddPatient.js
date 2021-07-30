@@ -16,12 +16,13 @@ const AddPatient = () => {
             dob: '',
             diagnosis: '',
             hospitalized_date: '',
-            wardID: '',
             discharged_date: '',
-            bill: ''
+            bill: '',
+            wardID: '',
+            insuranceID: ''
     });
 
-   const { patientID, firstname, lastname, gender, dob, diagnosis, hospitalized_date, wardID, discharged_date, bill} = patient;
+   const { patientID, firstname, lastname, gender, dob, diagnosis, hospitalized_date, wardID, discharged_date, bill, insuranceID} = patient;
 
    const onInputChange = e => {
        setPatient({ ...patient, [e.target.name]: e.target.value });
@@ -122,18 +123,6 @@ const AddPatient = () => {
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient wardID"
-                                name="wardID"
-                                value={wardID}
-                                onChange={ e => onInputChange(e)}
-                            />
-                        </div>
-
-
-                        <div class="form-group">
-                            <input
-                                type="text"
-                                className="form-control form-control-lg"
                                 placeholder="Enter Patient Discharged Date"
                                 name="discharged_date"
                                 value={discharged_date}
@@ -148,6 +137,28 @@ const AddPatient = () => {
                                 placeholder="Enter Patient Bill"
                                 name="bill"
                                 value={bill}
+                                onChange={ e => onInputChange(e)}
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="Enter Patient wardID"
+                                name="wardID"
+                                value={wardID}
+                                onChange={ e => onInputChange(e)}
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="Enter Patient insuranceID"
+                                name="insuranceID"
+                                value={insuranceID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
