@@ -1,51 +1,52 @@
 {
   "patients": [
     {
-      "patientID": "120",
-      "name": "Alex",
-      "gender": "M",
+      "patientId": "120",
+      "firstname": "Alex",
+      "lastname": "Morgan",
+      "gender": "Male",
       "dob": "02/01/2021",
       "diagnosis": "flu",
-      "hospitalized_date": "06/01/2021",
-      "ward": "Bed 301",
-      "discharged_date": "07/20/2021",
-      "bill": "$2500",
+      "hospitalizedDate": "06/01/2021",
+      "dischargedDate": "07/20/2021",
+      "billId": "11",
       "id": 4
+      
     },
     {
-      "patientID": "125",
-      "name": "David",
-      "gender": "Johnaham",
+      "patientId": "125",
+      "firstname": "David",
+      "lastname": "Cross",
+      "gender": "Male",
       "dob": "11/24/2021",
       "diagnosis": "Cancer",
-      "hospitalized_date": "06/07/2021",
-      "ward": "Bed 201",
-      "discharged_date": "06/08/2021",
-      "bill": "$1200",
+      "hospitalizedDate": "06/07/2021",
+      "dischargedDate": "06/08/2021",
+      "billId": "12",
       "id": 5
     },
     {
-      "patientID": "301",
-      "name": "Bill Jack",
+      "patientId": "301",
+      "firstname": "billId",
+      "lastname": "Burr",
       "gender": "Male",
       "dob": "05/20/1999",
       "diagnosis": "Covid 19",
-      "hospitalized_date": "06/12/2021",
-      "ward": "Bed 109, Rom 207",
-      "discharged_date": "06/14/2021",
-      "bill": "$1200",
+      "hospitalizedDate": "06/12/2021",
+      "dischargedDate": "06/14/2021",
+      "billId": "13",
       "id": 6
     },
     {
-      "patientID": "109",
-      "name": "FDSAFDSA",
-      "gender": "D",
-      "dob": "D",
-      "diagnosis": "D",
-      "hospitalized_date": "D",
-      "ward": "D",
-      "discharged_date": "D",
-      "bill": "D",
+      "patientId": "102",
+      "firstname": "Amy",
+      "lastname": "Monta",
+      "gender": "F",
+      "dob": "02/02/1989",
+      "diagnosis": "Obesity",
+      "hospitalizedDate": "02/01/2021",
+      "dischargedDate": "06/01/2021",
+      "billId": "14",
       "id": 7
     }
   ],
@@ -73,32 +74,31 @@
     {
       "wardID": "121",
       "bedNumber": "8",
-      "patientID": "120",
-      "undefined": "4",
+      "patientId": "120",
       "id": 3
     },
     {
       "wardID": "110",
       "bedNumber": "3",
-      "patientID": "125",
+      "patientId": "125",
       "id": 4
     },
     {
       "wardID": "124",
       "bedNumber": "6",
-      "patientID": "101",
+      "patientId": "101",
       "id": 5
     },
     {
       "wardID": "102",
       "bedNumber": "8",
-      "patientID": "101",
+      "patientId": "101",
       "id": 6
     }
   ],
   "insurances": [
     {
-      "patientID": "120",
+      "patientId": "120",
       "insuranceID": "121",
       "insuranceNumber": "12321321432",
       "name": "Kaiser",
@@ -107,7 +107,7 @@
       "id": 1
     },
     {
-      "patientID": "125",
+      "patientId": "125",
       "insuranceID": "210",
       "insuranceNumber": "12321321432",
       "name": "Blue Shield",
@@ -116,7 +116,7 @@
       "id": 2
     },
     {
-      "patientID": "301",
+      "patientId": "301",
       "insuranceID": "121",
       "insuranceNumber": "31243215432",
       "name": "Jackson Doe",
@@ -125,7 +125,7 @@
       "id": 3
     },
     {
-      "patientID": "321",
+      "patientId": "321",
       "insuranceID": "123",
       "insuranceNumber": "43215432",
       "name": "fdasf",
@@ -134,7 +134,7 @@
       "id": 4
     },
     {
-      "patientID": "211",
+      "patientId": "211",
       "insuranceID": "123",
       "insuranceNumber": "124321",
       "name": "Amy Lee",
