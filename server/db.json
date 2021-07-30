@@ -11,7 +11,9 @@
       "wardID": "121",
       "discharged_date": "07/20/2021",
       "bill": "$2500",
+      "insuranceID": "121",
       "id": 4
+      
     },
     {
       "patientID": "125",
@@ -24,6 +26,7 @@
       "wardID": "124",
       "discharged_date": "06/08/2021",
       "bill": "$1200",
+      "insuranceID": "123",
       "id": 5
     },
     {
@@ -37,6 +40,7 @@
       "wardID": "102",
       "discharged_date": "06/14/2021",
       "bill": "$1200",
+      "insuranceID": "121"
       "id": 6
     },
     {
@@ -50,6 +54,7 @@
       "wardID": "121",
       "discharged_date": "06/01/2021",
       "bill": "$2700",
+      "insuranceID": "210",
       "id": 7
     }
   ],

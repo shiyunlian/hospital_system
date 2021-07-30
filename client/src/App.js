@@ -15,6 +15,7 @@ import EditPharmacy from "./components/pharmacys/EditPharmacy";
 import EditWard from "./components/wards/EditWard";
 import AddInsurance from "./components/insurances/AddInsurance";
 import EditInsurance from "./components/insurances/EditInsurance";
+import ViewPatient from "./components/patients/ViewPatient";
 
 
 function App() {
@@ -66,6 +67,9 @@ function App() {
           </Route>
           <Route exact path="/insurances/edit/:id">
             <EditInsurance />
+          </Route>
+          <Route exact path="/patients/view/:id">
+            <ViewPatient />
           </Route>
         </Switch>
       </div>

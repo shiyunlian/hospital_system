@@ -34,7 +34,7 @@ const Patient = () => {
     };
 
 
-    return  ( 
+    return  (  
         <div className="container" >
             <div className="py-4">
                 <h1>Patient Information</h1>
@@ -63,9 +63,10 @@ const Patient = () => {
                             <th scope="col">DOB</th>
                             <th scope="col">Diagnosis</th>
                             <th scope="col">Hospitalized_date</th>
-                            <th scope="col">wardID </th>
                             <th scope="col">Discharged_date</th>
-                            <th scope="col">Bill</th>
+                            <th scope="col">Bill ($)</th>
+                            <th scope="col">Ward ID </th>
+                            <th scope="col">Insurance ID </th>
                             <th>Action</th>
           
                         </tr>
@@ -82,12 +83,13 @@ const Patient = () => {
                                     <td>{patient.dob}</td>
                                     <td>{patient.diagnosis}</td>
                                     <td>{patient.hospitalized_date}</td>
-                                    <td>{patient.wardID}</td>
                                     <td>{patient.discharged_date}</td>
                                     <td>{patient.bill}</td>
+                                    <td>{patient.wardID}</td>
+                                    <td>{patient.insuranceID}</td>
                                     <td>
                                         <Link class="btn btn-primary mr-2" 
-                                            to={'/patients/${patient.id}'}>View</Link>
+                                            to={'/patients/view/${patient.id}'}>View</Link>
 
                                         <Link class="btn btn-outline-primary mr-2" 
                                             to={'/patients/edit/${patient.id}'}>Edit</Link>
