@@ -50,7 +50,7 @@ const Patient = () => {
     };
     */
 
-    const deletePatient = (id) => {
+      const deletePatient = (id) => {
         axios.delete(`${url}/${id}`).then(() => {
           alert("Patient record deleted!");
         });
