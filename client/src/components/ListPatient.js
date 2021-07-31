@@ -35,7 +35,6 @@ const Patient = ({searchValue}) => {
 
      //filter rows to only include search value
   const search = (data, value) => {
-    console.log("VALUE: "+value)
     //if value is empty, just return all data
     if(value=="") {
       return data
@@ -48,7 +47,7 @@ const Patient = ({searchValue}) => {
     }
     else{
       return data.filter((row) => {
-        return row.name.toLowerCase().includes(value.toLowerCase())
+        return (row.firstname.toLowerCase().includes(value.toLowerCase()) || row.lastname.toLowerCase().includes(value.toLowerCase()))
       })
     }
   };
