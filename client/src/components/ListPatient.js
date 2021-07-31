@@ -85,7 +85,7 @@ const Patient = () => {
           </thead>
           <tbody>
             {patients.map((patient, index) => (
-              <tr key={index}>
+              <tr>
                 <th scope="row">{index + 1}</th>
                 <td>{patient.PATIENTID}</td>
                 <td>{patient.FIRSTNAME}</td>

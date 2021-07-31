@@ -24,6 +24,7 @@ const EditWard= () => {
        setWard({ ...ward, [e.target.name]: e.target.value });
    };
 
+   /*
    const onSubmit = e => {
     e.preventDefault();
     axios.post(url, ward)
@@ -34,6 +35,7 @@ const EditWard= () => {
     
     history.push("/wards");
     };
+    */
 
     React.useEffect(() => {
         axios.get('${url}/{WARDID}').then((response) => {
@@ -47,7 +49,7 @@ const EditWard= () => {
             e.preventDefault();
             axios.put('${url}/{WARDID}', ward)
             .then((response) => {
-            setPatient(response.data);
+            setWard(response.data);
             });
         
         history.push("/wards");
@@ -66,8 +68,8 @@ const EditWard= () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter ward ID"
-                                name="wardID"
-                                value={wardID}
+                                name="WARDID"
+                                value={WARDID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -77,8 +79,8 @@ const EditWard= () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Bed Number"
-                                name="bedNumber"
-                                value={bedNumber}
+                                name="BEDID"
+                                value={BEDID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -88,8 +90,8 @@ const EditWard= () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Patient ID"
-                                name="patientId"
-                                value={patientId}
+                                name="PATIENTID"
+                                value={PATIENTID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
