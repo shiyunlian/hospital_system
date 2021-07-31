@@ -9,7 +9,7 @@ import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
  Create a file for showing patient list and delete records
  * ************************************************************/
 
-const url = "http://localhost:8090/Patients";
+const url = "http://localhost:8090/patients";
 
 const Patient = () => {
   const [patients, setPatient] = useState([]);

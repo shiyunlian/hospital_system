@@ -10,57 +10,45 @@ import { useHistory, useParams } from 'react-router-dom';
 const EditPatient = () => {
     let history = useHistory();
     const { id } = useParams();
+    
+
+
     const [patient, setPatient] = useState({
-        patientID: "",
-        name: "",
-        gender: "",
-        dob: "",
-        diagnosis: "",
-        hospitalizedDate: "",
-        dischargedDate: "",
-        billId: ""
+        PATIENTID: '',
+        FIRSTNAME: '',
+        LASTNAME: '',
+        DOB: '',
+        GENDER: '',
+        DIAGNOSIS: '',
+        HOSPITALIZEDDATE: '',
+        DISCHARGEDDATE: '',
+        BILLID: ''
     });
 
-    const { patientID, name, gender, dob, diagnosis, hospitalizedDate, dischargedDate, billId} = patient;
+
+    const { PATIENTID, FIRSTNAME, LASTNAME, DOB, GENDER, DIAGNOSIS, HOSPITALIZEDDATE, DISCHARGEDDATE, BILLID} = patient;
 
    const onInputChange = e => {
        setPatient({ ...patient, [e.target.name]: e.target.value });
    };
 
    React.useEffect(() => {
-    axios.get('${url}/1').then((response) => {
+    axios.get('${url}/{PATIENTID}').then((response) => {
       setPatient(response.data);
     });
     }, []);
 
-   useEffect(() => {
-       loadPatient();
-   }, []);
 
-   /*
-   const onSubmit = async e => {
-        e.preventDefault();
-        await Axios.post("http://localhost:8000/patients", patient);
-        history.push("/patients");
-    };
-    */
     
     const onSubmit = e => {
         e.preventDefault();
-        axios.put('${url}/1', patient)
+        axios.put('${url}/{PATIENTID}', patient)
         .then((response) => {
         setPatient(response.data);
     });
     
     history.push("/patients");
     };
-
-//get edit patient information and post to db.json
-   const loadPatient  = async () =>
-   {
-       const result = await axios.get('http://localhost:8000/patients/${patient.id}');
-       setPatient(result.data);
-   };
 
 
     return(
@@ -74,8 +62,8 @@ const EditPatient = () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Patient ID"
-                                name="patientID"
-                                value={patientID}
+                                name="PATIENTID"
+                                value={PATIENTID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -84,9 +72,20 @@ const EditPatient = () => {
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient Name"
-                                name="name"
-                                value={name}
+                                placeholder="Enter Patient First Name"
+                                name="FIRSTNAME"
+                                value={FIRSTNAME}
+                                onChange={ e => onInputChange(e)}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="Enter Patient Last Name"
+                                name="LASTNAME"
+                                value={LASTNAME}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -96,8 +95,8 @@ const EditPatient = () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Patient DOB"
-                                name="dob"
-                                value={dob}
+                                name="DOB"
+                                value={DOB}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -106,20 +105,20 @@ const EditPatient = () => {
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient Gender"
-                                name="gender"
-                                value={gender}
+                                placeholder="Enter Patient GENDER"
+                                name="GENDER"
+                                value={GENDER}
                                 onChange={ e => onInputChange(e)}
                             />
-                        </div>
+                        </div>               
 
                         <div class="form-group">
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient Diagnosis"
-                                name="diagnosis"
-                                value={diagnosis}
+                                placeholder="Enter Patient DIAGNOSIS"
+                                name="DIAGNOSIS"
+                                value={DIAGNOSIS}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -129,8 +128,8 @@ const EditPatient = () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Patient Hospitalized Date"
-                                name="hospitalizedDate"
-                                value={hospitalizedDate}
+                                name="HOSPITALIZEDDATE"
+                                value={HOSPITALIZEDDATE}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -140,8 +139,8 @@ const EditPatient = () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Patient Discharged Date"
-                                name="dischargedDate"
-                                value={dischargedDate}
+                                name="DISCHARGEDDATE"
+                                value={DISCHARGEDDATE}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -150,9 +149,9 @@ const EditPatient = () => {
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient billId"
-                                name="billId"
-                                value={billId}
+                                placeholder="Enter Patient BILLID"
+                                name="BILLID"
+                                value={BILLID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
