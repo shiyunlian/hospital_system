@@ -20,7 +20,7 @@ create table staff(
     dob varchar2(50) not null,
     position varchar2(50) not null,
     departmentId varchar2(50) not null,
-    primary key(staffId),
+    primary key(username),
     foreign key(departmentId) references department(departmentId) on delete set null
 );
 
@@ -35,18 +35,17 @@ create table patient(
     dischargedDate varchar2(50) not null,
     billId varchar2(50) not null,
     primary key(patientId),
-    foreign key(billId) references bill(billId) on delete set null,
+    foreign key(billId) references bill(billId) on delete set null
 );
 
 create table staffHasPatient(
-    staffId varchar2(50) not null,
+    username varchar2(50) not null,
     patientId varchar2(50) not null,
-    foreign key(staffId) references staff(staffId) on delete set null,
+    foreign key(username) references staff(username) on delete set null,
     foreign key(patientId) references patient(patientId) on delete set null
 );
 
 create table ward(
-    id varchar2(50) not null,
     wardId varchar2(50) not null,
     bedId varchar2(50) not null,
     patientId varchar2(50),

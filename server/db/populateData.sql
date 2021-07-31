@@ -1,18 +1,13 @@
-insert into staff values('S10001','12345','John','Newton','John.Newton@hospital.com','1977-8-1','Attending','D110');
-insert into staff values('S10002','12345','Mike','Smith','Mike.Smith@hospital.com','1987-1-12','Fellow','D110');
-insert into staff values('S10003','12345','Tom','Taylor','Tom.Taylor@hospital.com','1967-2-21','Head of Department','D110');
-insert into staff values('S10004','12345','David','Brown','David.Brown@hospital.com','1990-3-13','Chief Resident','D110');
-insert into staff values('S10005','12345','Jack','Miller','Jack.Miller@hospital.com','1992-12-31','Senior Resident','D110');
-insert into staff values('S10006','12345','Steve','Davis','Steve.Davis@hospital.com','1993-10-11','Junior Resident','D110');
-
-insert into staffHasPatient values('S10001','P10001');
-insert into staffHasPatient values('S10001','P10002');
-insert into staffHasPatient values('S10001','P10003');
-insert into staffHasPatient values('S10001','P10004');
-insert into staffHasPatient values('S10001','P10005');
-insert into staffHasPatient values('S10001','P10006');
-insert into staffHasPatient values('S10001','P10007');
-insert into staffHasPatient values('S10001','P10008');
+insert into bill values('B10001',1111.11);
+insert into bill values('B10002',2111.11);
+insert into bill values('B10003',3111.11);
+insert into bill values('B10004',4111.11);
+insert into bill values('B10005',5111.11);
+insert into bill values('B10006',6111.11);
+insert into bill values('B10007',7111.11);
+insert into bill values('B10008',8111.11);
+insert into bill values('B10009',9111.11);
+insert into bill values('B10010',10111.11);
 
 insert into department values('D101','General Surgery','Covers a wide range of types of surgery and procedures on patients.');
 insert into department values('D102','Gynecology','Investigates and treats problems relating to the female urinary tract and reproductive organs, such as Endometriosis, infertility and incontinence.');
@@ -25,6 +20,13 @@ insert into department values('D108','Otolaryngology','Provides comprehensive an
 insert into department values('D109','Rheumatology','Treats patients for musculoskeletal disorders such as: bones, joints, ligaments, tendons, muscles and nerves.');
 insert into department values('D110','Intensive Care Unit','Provides intensive treatment medicine and caters to patients with severe and life-threatening illnesses and injuries');
 
+insert into staff values('S10001','12345','John','Newton','John.Newton@hospital.com','1977-8-1','Attending','D110');
+insert into staff values('S10002','12345','Mike','Smith','Mike.Smith@hospital.com','1987-1-12','Fellow','D110');
+insert into staff values('S10003','12345','Tom','Taylor','Tom.Taylor@hospital.com','1967-2-21','Head of Department','D110');
+insert into staff values('S10004','12345','David','Brown','David.Brown@hospital.com','1990-3-13','Chief Resident','D110');
+insert into staff values('S10005','12345','Jack','Miller','Jack.Miller@hospital.com','1992-12-31','Senior Resident','D110');
+insert into staff values('S10006','12345','Steve','Davis','Steve.Davis@hospital.com','1993-10-11','Junior Resident','D110');
+
 insert into patient values('P10001', 'Mike','Newton','1978-2-3','M','COVID-19','2020-12-8','2021-2-2','B10001');
 insert into patient values('P10002', 'David','Taylor','1959-10-11','M','COVID-19','2020-12-8','2021-2-2','B10002');
 insert into patient values('P10003', 'John','Smith','1987-8-21','M','COVID-19','2020-12-8','2021-2-2','B10003');
@@ -34,29 +36,26 @@ insert into patient values('P10006', 'John','Smith','1987-8-21','M','COVID-19','
 insert into patient values('P10007', 'Jack','Davis','1975-4-23','M','COVID-19','2020-12-8','2021-2-2','B10004');
 insert into patient values('P10008', 'Steve','Miller','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','B10005');
 
-insert into ward values('1','W1','B1','P10001');
-insert into ward values('2','W1','B2','');
-insert into ward values('3','W2','B1','P10002');
-insert into ward values('4','W2','B2','P10003');
-insert into ward values('5','W3','B1','P10004');
-insert into ward values('6','W3','B2','P10005');
-insert into ward values('7','W4','B1','P10006');
-insert into ward values('8','W4','B2','P10007');
-insert into ward values('9','W5','B1','P10008');
-insert into ward values('10','W5','B2','');
-insert into ward values('11','W6','B1','');
+insert into staffHasPatient values('S10001','P10001');
+insert into staffHasPatient values('S10001','P10002');
+insert into staffHasPatient values('S10001','P10003');
+insert into staffHasPatient values('S10001','P10004');
+insert into staffHasPatient values('S10001','P10005');
+insert into staffHasPatient values('S10001','P10006');
+insert into staffHasPatient values('S10001','P10007');
+insert into staffHasPatient values('S10001','P10008');
 
-insert into ward values(1,'W1','B1','P10001');
-insert into ward values(2,'W1','B2','');
-insert into ward values(3,'W2','B1','P10002');
-insert into ward values(4,'W2','B2','P10003');
-insert into ward values(5,'W3','B1','P10004');
-insert into ward values(6,'W3','B2','P10005');
-insert into ward values(7,'W4','B1','P10006');
-insert into ward values(8,'W4','B2','P10007');
-insert into ward values(9,'W5','B1','P10008');
-insert into ward values(10,'W5','B2','');
-insert into ward values(11,'W6','B1','');
+insert into ward values('W1','B1','P10001');
+insert into ward values('W1','B2','');
+insert into ward values('W2','B1','P10002');
+insert into ward values('W2','B2','P10003');
+insert into ward values('W3','B1','P10004');
+insert into ward values('W3','B2','P10005');
+insert into ward values('W4','B1','P10006');
+insert into ward values('W4','B2','P10007');
+insert into ward values('W5','B1','P10008');
+insert into ward values('W5','B2','');
+insert into ward values('W6','B1','');
 
 insert into departmentHasWard values('D110','W1','B1');
 insert into departmentHasWard values('D110','W2','B1');
@@ -98,17 +97,6 @@ insert into patientHasInsurance values('P10005','I105','1234567');
 insert into patientHasInsurance values('P10006','I106','1234567');
 insert into patientHasInsurance values('P10007','I107','1234567');
 insert into patientHasInsurance values('P10008','I108','1234567');
-
-insert into bill values('B10001',1111.11);
-insert into bill values('B10002',2111.11);
-insert into bill values('B10003',3111.11);
-insert into bill values('B10004',4111.11);
-insert into bill values('B10005',5111.11);
-insert into bill values('B10006',6111.11);
-insert into bill values('B10007',7111.11);
-insert into bill values('B10008',8111.11);
-insert into bill values('B10009',9111.11);
-insert into bill values('B10010',10111.11);
 
 insert into medicine values('M10001','Amoxicillin');
 insert into medicine values('M10002','Ampicillin');
