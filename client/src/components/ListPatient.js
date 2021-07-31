@@ -11,11 +11,12 @@ import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
 
 const url = "http://localhost:8090/patients";
 
-const Patient = () => {
+const Patient = ({searchValue}) => {
   const [patients, setPatient] = useState([]);
 
   useEffect(() => {
     axios.get(url).then((response) => {
+      console.log("PATEINTs: "+response.data)
       setPatient(response.data);
     });
   }, []);
@@ -50,6 +51,26 @@ const Patient = () => {
     });
   };
 
+  //filter rows to only include search value
+  const search = (data, value) => {
+    console.log("VALUE: "+value)
+    //if value is empty, just return all data
+    if(value=="") {
+      return data
+    }
+    //check if the value is a number or string, if it is a number search by id, if string search by name
+    if (!isNaN(value)){
+      return data.filter((row) => {
+        return row.id.toString()==value
+      })
+    }
+    else{
+      return data.filter((row) => {
+        return row.name.toLowerCase().includes(value.toLowerCase())
+      })
+    }
+  };
+
   return (
     <div className="container">
       <div className="py-4">
@@ -66,9 +87,8 @@ const Patient = () => {
         </Navbar>
         <div className="row"></div>
         <br></br>
-
-        <table class="table border shadow">
-          <thead class="thead-dark">
+        <table className="table border shadow">
+          <thead className="thead-dark">
             <tr>
               <th scope="col">Number</th>
               <th scope="col">Patient ID</th>
@@ -84,8 +104,8 @@ const Patient = () => {
             </tr>
           </thead>
           <tbody>
-            {patients.map((patient, index) => (
-              <tr>
+            {search(patients, searchValue).map((patient, index) => (
+              <tr key={index}>         
                 <th scope="row">{index + 1}</th>
                 <td>{patient.PATIENTID}</td>
                 <td>{patient.FIRSTNAME}</td>
