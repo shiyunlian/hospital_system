@@ -102,7 +102,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-var searchValue="phil"
 //filter rows to only include search value
 const search = (data, value) => {
   //if value is empty, just return all data
@@ -121,11 +120,8 @@ const search = (data, value) => {
     })
   }
 };
-const searchResult = search(rows, searchValue)
 
-
-
-export default function PatientTable() {
+export default function PatientTable({searchValue}) {
   const classes = useStyles();
 
   return (
@@ -163,7 +159,7 @@ export default function PatientTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {searchResult.map((row) => (
+          {search(rows, searchValue).map((row) => (
             <TableRow key={row.id}>
               <TableCell align="center">{row.id}</TableCell>
               <TableCell align="center" component={Link} to="/patientID">
