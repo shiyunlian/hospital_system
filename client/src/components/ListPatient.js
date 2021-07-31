@@ -61,7 +61,7 @@ const Patient = ({searchValue}) => {
     //check if the value is a number or string, if it is a number search by id, if string search by name
     if (!isNaN(value)){
       return data.filter((row) => {
-        return row.id.toString()==value
+        return row.patientID.toString().includes(value)
       })
     }
     else{
