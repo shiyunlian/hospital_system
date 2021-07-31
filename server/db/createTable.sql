@@ -46,6 +46,7 @@ create table staffHasPatient(
 );
 
 create table ward(
+    id varchar2(50) not null,
     wardId varchar2(50) not null,
     bedId varchar2(50) not null,
     patientId varchar2(50),

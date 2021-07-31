@@ -34,17 +34,17 @@ insert into patient values('P10006', 'John','Smith','1987-8-21','M','COVID-19','
 insert into patient values('P10007', 'Jack','Davis','1975-4-23','M','COVID-19','2020-12-8','2021-2-2','B10004');
 insert into patient values('P10008', 'Steve','Miller','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','B10005');
 
-insert into ward values('W1','B1','P10001');
-insert into ward values('W1','B2','');
-insert into ward values('W2','B1','P10002');
-insert into ward values('W2','B2','P10003');
-insert into ward values('W3','B1','P10004');
-insert into ward values('W3','B2','P10005');
-insert into ward values('W4','B1','P10006');
-insert into ward values('W4','B2','P10007');
-insert into ward values('W5','B1','P10008');
-insert into ward values('W5','B2','');
-insert into ward values('W6','B1','');
+insert into ward values('1','W1','B1','P10001');
+insert into ward values('2','W1','B2','');
+insert into ward values('3','W2','B1','P10002');
+insert into ward values('4','W2','B2','P10003');
+insert into ward values('5','W3','B1','P10004');
+insert into ward values('6','W3','B2','P10005');
+insert into ward values('7','W4','B1','P10006');
+insert into ward values('8','W4','B2','P10007');
+insert into ward values('9','W5','B1','P10008');
+insert into ward values('10','W5','B2','');
+insert into ward values('11','W6','B1','');
 
 insert into departmentHasWard values('D110','W1','B1');
 insert into departmentHasWard values('D110','W2','B1');
