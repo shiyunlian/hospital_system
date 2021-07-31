@@ -10,10 +10,7 @@ import {
   Divider,
   IconButton,
   Badge,
-  Grid,
   Button,
-  Paper,
-  Container,
   InputBase,
 } from "@material-ui/core";
 import useStyles from "./styles";
