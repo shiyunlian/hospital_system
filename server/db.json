@@ -8,10 +8,8 @@
       "dob": "02/01/2021",
       "diagnosis": "flu",
       "hospitalized_date": "06/01/2021",
-      "wardID": "121",
       "discharged_date": "07/20/2021",
-      "bill": "$2500",
-      "insuranceID": "121",
+      "billId": "1020",
       "id": 4
       
     },
@@ -23,10 +21,8 @@
       "dob": "11/24/2021",
       "diagnosis": "Cancer",
       "hospitalized_date": "06/07/2021",
-      "wardID": "124",
       "discharged_date": "06/08/2021",
-      "bill": "$1200",
-      "insuranceID": "123",
+      "billId": "1233",
       "id": 5
     },
     {
@@ -37,12 +33,10 @@
       "dob": "05/20/1999",
       "diagnosis": "Covid 19",
       "hospitalized_date": "06/12/2021",
-      "wardID": "102",
       "discharged_date": "06/14/2021",
-      "bill": "$1200",
-      "insuranceID": "121"
+      "billId": "1200",
       "id": 6
-<<<<<<< Updated upstream
+
     },
     {
       "patientID": "102",
@@ -52,13 +46,11 @@
       "dob": "02/02/1989",
       "diagnosis": "Obesity",
       "hospitalized_date": "02/01/2021",
-      "wardID": "121",
       "discharged_date": "06/01/2021",
-      "bill": "$2700",
-      "insuranceID": "210",
+      "billId": "1011",
       "id": 7
-=======
->>>>>>> Stashed changes
+
+
     }
   ],
   "pharmacys": [
@@ -83,28 +75,27 @@
   ],
   "wards": [
     {
-      "wardID": "121",
+      "wardId": "121",
       "bedNumber": "8",
-      "patientID": "120",
-      "undefined": "4",
+      "patientId": "120",
       "id": 3
     },
     {
-      "wardID": "110",
+      "wardId": "110",
       "bedNumber": "3",
-      "patientID": "125",
+      "patientId": "125",
       "id": 4
     },
     {
-      "wardID": "124",
+      "wardId": "124",
       "bedNumber": "6",
-      "patientID": "101",
+      "patientId": "101",
       "id": 5
     },
     {
-      "wardID": "102",
+      "wardId": "102",
       "bedNumber": "8",
-      "patientID": "101",
+      "patientId": "101",
       "id": 6
     }
   ],

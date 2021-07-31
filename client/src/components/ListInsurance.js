@@ -62,7 +62,7 @@ const Insurance = () => {
                             <th scope="col">Insurance Name</th>
                             <th scope="col">Insurance Phone</th>
                             <th scope="col">Insurance Address</th>
-                            <th>Action</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -76,14 +76,7 @@ const Insurance = () => {
                                     <td>{insurance.name}</td>
                                     <td>{insurance.phone}</td>
                                     <td>{insurance.address}</td>
-                                    <td>
-                                        <Link class="btn btn-outline-primary mr-2" 
-                                            to={'/insurances/edit/${insurance.id}'}>Edit</Link>
 
-                                        <Link class="btn btn-danger" 
-                                            onClick={() => deleteInsurance(insurance.id)}>Delete</Link>
-
-                                    </td>
                                 </tr>                              
                             ) )
                         }

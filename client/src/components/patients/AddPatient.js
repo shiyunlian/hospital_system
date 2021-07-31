@@ -17,12 +17,10 @@ const AddPatient = () => {
             diagnosis: '',
             hospitalized_date: '',
             discharged_date: '',
-            bill: '',
-            wardID: '',
-            insuranceID: ''
+            billId: ''
     });
 
-   const { patientID, firstname, lastname, gender, dob, diagnosis, hospitalized_date, wardID, discharged_date, bill, insuranceID} = patient;
+   const { patientID, firstname, lastname, gender, dob, diagnosis, hospitalized_date, discharged_date, billId} = patient;
 
    const onInputChange = e => {
        setPatient({ ...patient, [e.target.name]: e.target.value });
@@ -134,34 +132,14 @@ const AddPatient = () => {
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient Bill"
-                                name="bill"
-                                value={bill}
+                                placeholder="Enter Patient Id"
+                                name="billId"
+                                value={billId}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
 
-                        <div class="form-group">
-                            <input
-                                type="text"
-                                className="form-control form-control-lg"
-                                placeholder="Enter Patient wardID"
-                                name="wardID"
-                                value={wardID}
-                                onChange={ e => onInputChange(e)}
-                            />
-                        </div>
-
-                        <div class="form-group">
-                            <input
-                                type="text"
-                                className="form-control form-control-lg"
-                                placeholder="Enter Patient insuranceID"
-                                name="insuranceID"
-                                value={insuranceID}
-                                onChange={ e => onInputChange(e)}
-                            />
-                        </div>
+                  
 
                     
                         <button className="btn btn-primary btn-block">Add Patient</button>

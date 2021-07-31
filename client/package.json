@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "json-server": "json-server --watch db.json --port 8000",
-    "start:dev": "concurrently \"npm start\" \"npm run\"npm run json-server\"",
+    "dev": "concurrently \"npm start\" \"npm run\"npm run json-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

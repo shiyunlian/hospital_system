@@ -59,14 +59,13 @@ const Patient = () => {
                             <th scope="col">Patient ID</th>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
-                            <th scope="col">Gender</th>
+                            
                             <th scope="col">DOB</th>
+                            <th scope="col">Gender</th>
                             <th scope="col">Diagnosis</th>
                             <th scope="col">Hospitalized_date</th>
                             <th scope="col">Discharged_date</th>
-                            <th scope="col">Bill ($)</th>
-                            <th scope="col">Ward ID </th>
-                            <th scope="col">Insurance ID </th>
+                            <th scope="col">Bill ID</th>
                             <th>Action</th>
           
                         </tr>
@@ -84,9 +83,7 @@ const Patient = () => {
                                     <td>{patient.diagnosis}</td>
                                     <td>{patient.hospitalized_date}</td>
                                     <td>{patient.discharged_date}</td>
-                                    <td>{patient.bill}</td>
-                                    <td>{patient.wardID}</td>
-                                    <td>{patient.insuranceID}</td>
+                                    <td>{patient.billId}</td>
                                     <td>
                                         <Link class="btn btn-primary mr-2" 
                                             to={'/patients/view/${patient.id}'}>View</Link>

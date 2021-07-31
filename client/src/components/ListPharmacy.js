@@ -27,11 +27,6 @@ const Pharmacy = () => {
         setPharmacy(result.data.reverse());
     };
 
-    //delete pharmacy records using axios http
-    const deletePharmacy = async id => {
-        await axios.delete('http://localhost:8000/pharmacys/' + id);
-        loadPharmacys();
-    };
 
 
     return  ( 
@@ -59,7 +54,7 @@ const Pharmacy = () => {
                             <th scope="col">Pharmacy ID</th>
                             <th scope="col">Pharmacy Name</th>
                             <th scope="col">Pharmacy Address</th>
-                            <th>Action</th>
+                
                         </tr>
                     </thead>
                     <tbody>
@@ -70,14 +65,7 @@ const Pharmacy = () => {
                                     <td>{pharmacy.pharmacyID}</td>
                                     <td>{pharmacy.name}</td>
                                     <td>{pharmacy.address}</td>
-                                    <td>
-                                        <Link class="btn btn-outline-primary mr-2" 
-                                            to={'/pharmacys/edit/${pharmacy.id}'}>Edit</Link>
 
-                                        <Link class="btn btn-danger" 
-                                            onClick={() => deletePharmacy(pharmacy.id)}>Delete</Link>
-
-                                    </td>
                                 </tr>                              
                             ) )
                         }
