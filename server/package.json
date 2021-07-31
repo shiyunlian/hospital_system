@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "json-server": "json-server --watch db.json --port 8000",
+    "json-server": "json-server --watch db.json --port 8090",
     "start:dev": "concurrently \"npm start\" \"npm run\"npm run json-server\""
   },
   "keywords": [],

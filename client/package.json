@@ -21,12 +21,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "json-server": "json-server --watch db.json --port 8000",
+    "json-server": "json-server --watch db.json --port 8090",
     "start:dev": "concurrently \"npm start\" \"npm run\"npm run json-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "proxy": "http://localhost:8000"
+    "proxy": "http://localhost:8090"
   },
   "eslintConfig": {
     "extends": [
