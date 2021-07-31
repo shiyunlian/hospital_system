@@ -6,7 +6,7 @@ import { useHistory, useParams } from 'react-router-dom';
 /****************************************************************************************
  * Create a file for editing a patient and create stateful component addPatient
  *****************************************************************************************/
- const url = "http://localhost:8090/Patients";
+ const url = "http://localhost:8090/patients";
 const EditPatient = () => {
     let history = useHistory();
     const { id } = useParams();
