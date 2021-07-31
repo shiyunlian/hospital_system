@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomeScreen from "./HomeScreen";
 import PatientScreen from "./PatientScreen";
@@ -6,7 +5,6 @@ import WardScreen from "./WardScreen";
 import PharmacyScreen from "./PharmacyScreen";
 import InsuranceScreen from "./InsuranceScreen";
 import AccountScreen from "./AccountScreen";
-import Patient from "./components/ListPatient";
 import AddPatient from "./components/patients/AddPatient";
 import EditPatient from "./components/patients/EditPatient";
 import AddPharmacy from "./components/pharmacys/AddPharmacy";
@@ -15,7 +13,6 @@ import EditPharmacy from "./components/pharmacys/EditPharmacy";
 import EditWard from "./components/wards/EditWard";
 import AddInsurance from "./components/insurances/AddInsurance";
 import EditInsurance from "./components/insurances/EditInsurance";
-
 
 function App() {
   return (
@@ -67,7 +64,6 @@ function App() {
           <Route exact path="/insurances/edit/:id">
             <EditInsurance />
           </Route>
-        
         </Switch>
       </div>
     </Router>
