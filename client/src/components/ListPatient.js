@@ -14,25 +14,47 @@ import {
 /***************************************************************
  Create a file for showing patient list and delete records
  * ************************************************************/
+
+ const url = "http://localhost:8090/Patients";
+
 const Patient = () => {
     const [patients, setPatient] = useState([]);
 
     useEffect(() => {
+        axios.get(url).then((response) => {
+          setPatient(response.data);
+        });
+      }, []);
+    
+      if (!patients) return null;
+
+      /*
+    useEffect(() => {
         loadPatients();
     }, []);
+    */
 
     //Get request using Axios http
+    /*
     const loadPatients = async () => {
         const result = await axios.get("http://localhost:8000/patients");
         setPatient(result.data.reverse());
     };
+    */
 
     //delete patient records using axios http
+    /*
     const deletePatient = async id => {
         await axios.delete('http://localhost:8000/patients/' + id);
         loadPatients();
     };
+    */
 
+    const deletePatient = (id) => {
+        axios.delete(`${url}/${id}`).then(() => {
+          alert("Patient record deleted!");
+        });
+      };
 
     return  (  
         <div className="container" >
@@ -72,7 +94,7 @@ const Patient = () => {
                     <tbody>
                         {
                             patients.map((patient, index) => (
-                                <tr>
+                                <tr key={index}>
                                     <th scope="row">{index+1}</th>
                                     <td>{patient.patientId}</td>
                                     <td>{patient.firstname}</td>
