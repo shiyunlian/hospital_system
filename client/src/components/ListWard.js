@@ -38,7 +38,6 @@ const Ward = () => {
   const deleteWard = (id) => {
     axios.delete(`${url}/${id}`).then(() => {
       alert("Ward record deleted!");
-      setWard(null);
     });
   };
 
@@ -76,7 +75,7 @@ const Ward = () => {
           </thead>
           <tbody>
             {wards.map((ward, index) => (
-              <tr key={ward.ID}>
+              <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>{ward.WARDID}</td>
                 <td>{ward.BEDID}</td>
@@ -91,7 +90,7 @@ const Ward = () => {
 
                   <Link
                     class="btn btn-danger"
-                    onClick={() => deleteWard(ward.id)}
+                    onClick={() => deleteWard(ward.WARDID)}
                   >
                     Delete
                   </Link>
