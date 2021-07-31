@@ -19,33 +19,7 @@ const Ward = () => {
   }, []);
 
   if (!wards) return null;
-  // useEffect(() => {
-  //   loadWards();
-  // }, []);
 
-  // //Get request using Axios http
-  // const loadWards = async () => {
-  //   const result = await axios.get("http://localhost:8080/wards");
-  //   setWard(result.data.reverse());
-  // };
-
-  // //delete Ward records using axios http
-  // const deleteWard = async id => {
-  //     await axios.delete('http://localhost:8000/wards/' + id);
-  //     loadWards();
-  // };
-
-  const deleteWard = (id) => {
-    axios.delete(`${url}/${id}`).then(() => {
-      alert("Ward record deleted!");
-    });
-  };
-
-  const test = () => {
-    console.log(wards);
-  };
-
-  test();
 
   return (
     <div className="container">
@@ -54,11 +28,6 @@ const Ward = () => {
         <Navbar color="dark" dark>
           <Container>
             <NavbarBrand href="/wards">Ward List</NavbarBrand>
-            <Nav>
-              <Link className="btn btn-primary" to="/wards/add">
-                Add Ward
-              </Link>
-            </Nav>
           </Container>
         </Navbar>
         <div className="row"></div>
@@ -86,13 +55,6 @@ const Ward = () => {
                     to={"/wards/edit/${ward.WARDID}"}
                   >
                     Edit
-                  </Link>
-
-                  <Link
-                    class="btn btn-danger"
-                    onClick={() => deleteWard(ward.WARDID)}
-                  >
-                    Delete
                   </Link>
                 </td>
               </tr>
