@@ -14,7 +14,10 @@ app.use(express.json());
 // configure proper initOracleClient based on platform
 if (process.platform === "win32") {
   // Windows
-  oracledb.initOracleClient({ libDir: "C:\\oracle\\instantclient_19_11" });
+  // oracledb.initOracleClient({ libDir: "C:\\oracle\\instantclient_19_11" });
+  oracledb.initOracleClient({
+    libDir: "C:oraclexeapporacleinstantclient_19_11",
+  });
 } else if (process.platform === "darwin") {
   // macOS
   oracledb.initOracleClient({
