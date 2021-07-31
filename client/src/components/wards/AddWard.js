@@ -1,31 +1,59 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 
 /****************************************************************************************
  * Create a file for adding a ward and create stateful component AddWard
  *****************************************************************************************/
+ const url = "http://localhost:8090/wards";
 
 const AddWard = () => {
     let history = useHistory();
     const [ward, setWard] = useState({
-        wardID: '',
-        bedNumber: '',
-        patientId: ''
+        WARDID: '',
+        BEDID: '',
+        PATIENTID: ''
     });
     
-   const { wardID, bedNumber, patientId} = ward;
+   const { WARDID, BEDID, PATIENTID} = ward;
 
    const onInputChange = e => {
        setWard({ ...ward, [e.target.name]: e.target.value });
    };
 
+   
+
+  React.useEffect(() => {
+    axios.get('${url}/1').then((response) => {
+      setWard(response.data);
+    });
+  }, []);
+  
+
+
    //post add ward record to db.json
+   /*
    const onSubmit = async e => {
        e.preventDefault();
-       await Axios.post("http://localhost:8000/wards", ward);
+       await axios.post("http://localhost:8000/wards", ward);
        history.push("/wards");
    };
+   */
+   
+
+   const onSubmit = e => {
+    e.preventDefault();
+    axios.post(url, ward)
+    .then((response) => {
+       setWard(response.data);
+     
+    });
+    
+    history.push("/wards");
+    };
+
+
+   // if (!post) return "No post"
 
 
     return(
@@ -39,8 +67,8 @@ const AddWard = () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter ward ID"
-                                name="wardID"
-                                value={wardID}
+                                name="WARDID"
+                                value={WARDID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -50,8 +78,8 @@ const AddWard = () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Bed Number"
-                                name="bedNumber"
-                                value={bedNumber}
+                                name="BEDID"
+                                value={BEDID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
@@ -61,8 +89,8 @@ const AddWard = () => {
                                 type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter Patient ID"
-                                name="patientId"
-                                value={patientId}
+                                name="PATIENTID"
+                                value={PATIENTID}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>
