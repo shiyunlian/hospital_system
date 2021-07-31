@@ -9,7 +9,7 @@ import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
  Create a file for showing patient list and delete records
  * ************************************************************/
 
-const url = "http://localhost:8090/Patients";
+const url = "http://localhost:8090/patients";
 
 const Patient = () => {
   const [patients, setPatient] = useState([]);
@@ -44,82 +44,6 @@ const Patient = () => {
     };
     */
 
-<<<<<<< HEAD
-      const deletePatient = (id) => {
-        axios.delete(`${url}/${id}`).then(() => {
-          alert("Patient record deleted!");
-        });
-      };
-
-    return  (  
-        <div className="container" >
-            <div className="py-4">
-                <h1>Patient Information</h1>
-                <Navbar color="dark" dark>
-                    <Container>
-                    <NavbarBrand href="/patients">Patient List</NavbarBrand>
-                    <Nav>
-                        <Link className="btn btn-primary" to ="/patients/add">Add Patient</Link>
-                    </Nav>
-                    </Container>
-
-                </Navbar>
-                <div className = "row">
-                 
-                 </div>
-                 <br></br>
-
-                <table class="table border shadow">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Number</th>
-                            <th scope="col">Patient ID</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">DOB</th>
-                            <th scope="col">Diagnosis</th>
-                            <th scope="col">Hospitalized Date</th>
-                            <th scope="col">Discharged Date</th>
-                            <th scope="col">Bill ID</th>
-                            <th>Action</th>
-          
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            patients.map((patient, index) => (
-                                <tr key={index}>
-                                    <th scope="row">{index+1}</th>
-                                    <td>{patient.patientId}</td>
-                                    <td>{patient.firstname}</td>
-                                    <td>{patient.lastname}</td>
-                                    <td>{patient.dob}</td>
-                                    <td>{patient.gender}</td>                          
-                                    <td>{patient.diagnosis}</td>
-                                    <td>{patient.hospitalizedDate}</td>
-                                    <td>{patient.dischargedDate}</td>
-                                    <td>{patient.billId}</td>
-                                    <td>
-                                        <Link class="btn btn-primary mr-2" 
-                                            to={'/patients/view/${patient.id}'}>View</Link>
-
-                                        <Link class="btn btn-outline-primary mr-2" 
-                                            to={'/patients/edit/${patient.id}'}>Edit</Link>
-
-                                        <Link class="btn btn-danger" 
-                                            onClick={() => deletePatient(patient.id)}>Delete</Link>
-
-                                    </td>
-                                </tr>                              
-                            ) )
-                        }
-                    </tbody>
-                    </table>            
-            </div>
-        </div> 
-    );
-=======
   const deletePatient = (id) => {
     axios.delete(`${url}/${id}`).then(() => {
       alert("Patient record deleted!");
@@ -201,7 +125,6 @@ const Patient = () => {
       </div>
     </div>
   );
->>>>>>> 386a862facc73d7221e7ad9ee3efaa74ff3d14cb
 };
 
 export default Patient;
