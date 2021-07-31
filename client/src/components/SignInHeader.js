@@ -27,7 +27,7 @@ import ListItems from "./ListItems";
 
 const SignInHeader = () => {
   const classes = useStyles();
-
+  
   const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
@@ -35,6 +35,14 @@ const SignInHeader = () => {
   };
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+  const SearchPatient = (event) => {
+    var search = event.target.value;
+    console.log(search)
+    if (search!=""){
+      //this.setState({value: search});
+      console.log("non empty")
+    }
   };
 
   return (
@@ -77,6 +85,7 @@ const SignInHeader = () => {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
+              onChange={SearchPatient}
             />
           </div>
           <div className={classes.grow} />
