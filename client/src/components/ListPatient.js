@@ -66,7 +66,7 @@ const Patient = ({searchValue}) => {
     }
     else{
       return data.filter((row) => {
-        return row.name.toLowerCase().includes(value.toLowerCase())
+        return (row.firstname.toLowerCase().includes(value.toLowerCase()) || row.lastname.toLowerCase().includes(value.toLowerCase()))
       })
     }
   };
