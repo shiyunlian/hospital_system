@@ -132,19 +132,19 @@ app.get("/patients/:patientId", (req, res) => {
 // URI: /patients
 // Creates a new patient
 app.post("/patients", (req, res) => {
-  if ("application/json" !== req.get("Content-Type")) {
-    res
-      .set("Content-Type", "application/json")
-      .status(415)
-      .send(
-        JSON.stringify({
-          status: 415,
-          message: "Wrong content-type. Only application/json is supported",
-          detailed_message: null,
-        })
-      );
-    return;
-  }
+  // if ("application/json" !== req.get("Content-Type")) {
+  //   res
+  //     .set("Content-Type", "application/json")
+  //     .status(415)
+  //     .send(
+  //       JSON.stringify({
+  //         status: 415,
+  //         message: "Wrong content-type. Only application/json is supported",
+  //         detailed_message: null,
+  //       })
+  //     );
+  //   return;
+  // }
 
   oracledb.getConnection(connAttrs, (err, connection) => {
     if (err) {
@@ -162,15 +162,15 @@ app.post("/patients", (req, res) => {
     connection.execute(
       "insert into patient values (:patientId, :firstName, :lastName, :dob, :gender, :diagnosis, : hospitalizedDate, :dischargedDate,:billId) ",
       [
-        req.body.patientId,
-        req.body.firstName,
-        req.body.lastName,
-        req.body.dob,
-        req.body.gender,
-        req.body.diagnosis,
-        req.body.hospitalizedDate,
-        req.body.dischargedDate,
-        req.body.billId,
+        req.body.PATIENTID,
+        req.body.FIRSTNAME,
+        req.body.LASTNAME,
+        req.body.DOB,
+        req.body.GENDER,
+        req.body.DIAGNOSIS,
+        req.body.HOSPITALIZEDDATE,
+        req.body.DISCHARGEDDATE,
+        req.body.BILLID,
       ],
       {
         autoCommit: true,
@@ -194,8 +194,12 @@ app.post("/patients", (req, res) => {
           // Successfully created the resource
           res
             .status(201)
-            .set("Location", "/patients/" + req.body.patientId)
+            .set("Location", "/patients/" + req.body.PATIENTID)
             .end();
+          // res
+          //   .status(201)
+          //   .set("/patients/" + req.body.PATIENTID)
+          //   .end();
         }
         if (connection) {
           try {
@@ -270,19 +274,19 @@ const buildUpdateStatement = (req) => {
 // URI: /patients/:patientId
 // Update the patient info given in :patientId
 app.put("/patients/:patientId", (req, res) => {
-  if ("application/json" !== req.get("Content-Type")) {
-    res
-      .set("Content-Type", "application/json")
-      .status(415)
-      .send(
-        JSON.stringify({
-          status: 415,
-          message: "Wrong content-type. Only application/json is supported",
-          detailed_message: null,
-        })
-      );
-    return;
-  }
+  // if ("application/json" !== req.get("Content-Type")) {
+  //   res
+  //     .set("Content-Type", "application/json")
+  //     .status(415)
+  //     .send(
+  //       JSON.stringify({
+  //         status: 415,
+  //         message: "Wrong content-type. Only application/json is supported",
+  //         detailed_message: null,
+  //       })
+  //     );
+  //   return;
+  // }
 
   oracledb.getConnection(connAttrs, (err, connection) => {
     if (err) {
