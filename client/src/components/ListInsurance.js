@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Link as NavLink } from "react-router-dom";
 
 import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
-
+const url = "http://localhost:8090/insurances";
 /***************************************************************
  Create a file for showing insurance list and delete records
  * ************************************************************/
@@ -12,20 +12,34 @@ const Insurance = () => {
   const [insurances, setInsurance] = useState([]);
 
   useEffect(() => {
-    loadInsurances();
+    axios.get(url).then((response) => {
+      setInsurance(response.data);
+    });
   }, []);
 
-  //Get request using Axios http
-  const loadInsurances = async () => {
-    const result = await axios.get("http://localhost:8000/insurances");
-    setInsurance(result.data.reverse());
+  if (!insurances) return null;
+
+  const deleteInsurance = (id) => {
+    axios.delete(`${url}/${id}`).then(() => {
+      alert("Insurance record deleted!");
+    });
   };
 
-  //delete insurance records using axios http
-  const deleteInsurance = async (id) => {
-    await axios.delete("http://localhost:8000/insurances/" + id);
-    loadInsurances();
-  };
+  // useEffect(() => {
+  //   loadInsurances();
+  // }, []);
+
+  // //Get request using Axios http
+  // const loadInsurances = async () => {
+  //   const result = await axios.get("http://localhost:8000/insurances");
+  //   setInsurance(result.data.reverse());
+  // };
+
+  // //delete insurance records using axios http
+  // const deleteInsurance = async (id) => {
+  //   await axios.delete("http://localhost:8000/insurances/" + id);
+  //   loadInsurances();
+  // };
 
   return (
     <div className="container">
@@ -48,9 +62,7 @@ const Insurance = () => {
           <thead class="thead-dark">
             <tr>
               <th scope="col">Number</th>
-              <th scope="col">Patient ID</th>
               <th scope="col">Insurance ID</th>
-              <th scope="col">Insurance Number</th>
               <th scope="col">Insurance Name</th>
               <th scope="col">Insurance Phone</th>
               <th scope="col">Insurance Address</th>
@@ -59,25 +71,23 @@ const Insurance = () => {
           </thead>
           <tbody>
             {insurances.map((insurance, index) => (
-              <tr>
+              <tr key={index}>
                 <th scope="row">{index + 1}</th>
-                <td>{insurance.patientID}</td>
-                <td>{insurance.insuranceID}</td>
-                <td>{insurance.insuranceNumber}</td>
-                <td>{insurance.name}</td>
-                <td>{insurance.phone}</td>
-                <td>{insurance.address}</td>
+                <td>{insurance.INSURANCEID}</td>
+                <td>{insurance.NAME}</td>
+                <td>{insurance.PHONENUM}</td>
+                <td>{insurance.ADDRESS}</td>
                 <td>
                   <Link
                     class="btn btn-outline-primary mr-2"
-                    to={"/insurances/edit/${insurance.id}"}
+                    to={"/insurances/edit/${insurance.INSURANCEID}"}
                   >
                     Edit
                   </Link>
 
                   <Link
                     class="btn btn-danger"
-                    onClick={() => deleteInsurance(insurance.id)}
+                    onClick={() => deleteInsurance(insurance.INSURANCEID)}
                   >
                     Delete
                   </Link>
