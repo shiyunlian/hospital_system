@@ -77,10 +77,17 @@ const Ward = () => {
           </thead>
           <tbody>
             {wards.map((ward, index) => (
+              <tr key={ward.id}>
+                <th scope="row">{index + 1}</th>
+                <td>{ward.wardId}</td>
+                <td>{ward.bedId}</td>
+                <td>{ward.patientId}</td>
+
+                {/* {wards.map((ward, index) => (
               <tr>
                 <th scope="row">{index + 1}</th>
                 <td>{ward.id}</td>
-                {/* <td>{ward.bedId}</td>
+                <td>{ward.bedId}</td>
                 <td>{ward.patientId}</td> */}
                 <td>
                   <Link
