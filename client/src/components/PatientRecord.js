@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Grid } from "@material-ui/core";
 import useStyles from "./styles";
 import PatientTable from "./PatientTable";
@@ -6,17 +6,11 @@ import SignInHeader from "./SignInHeader";
 
 export default function PatientRecord() {
   const classes = useStyles();
-
-  //get search value and store in value variable
-  var value = ""
-  const handleSearch = (search) => {
-    value = search
-    return value
-  };
+  var [value, setValue] = useState("",)
 
   return (
     <div className={classes.root}>
-      <SignInHeader />
+      <SignInHeader getSearchValue={value => setValue(value) } />
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Grid item xs={12}>
