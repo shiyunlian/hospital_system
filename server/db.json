@@ -11,7 +11,6 @@
       "discharged_date": "07/20/2021",
       "billId": "1020",
       "id": 4
-      
     },
     {
       "patientID": "125",
@@ -36,7 +35,6 @@
       "discharged_date": "06/14/2021",
       "billId": "1200",
       "id": 6
-
     },
     {
       "patientID": "102",
@@ -49,8 +47,18 @@
       "discharged_date": "06/01/2021",
       "billId": "1011",
       "id": 7
-
-
+    },
+    {
+      "patientID": "201",
+      "firstname": "Clinton",
+      "lastname": "Bill",
+      "gender": "M",
+      "dob": "01/01/1876",
+      "diagnosis": "Flu",
+      "hospitalized_date": "01/01/2021",
+      "discharged_date": "01/03/2021",
+      "billId": "1002",
+      "id": 8
     }
   ],
   "pharmacys": [
