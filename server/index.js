@@ -12,7 +12,7 @@ oracledb.getConnection(
   function(err, connection) {
     if (err) {error = err; return;}
     
-    connection.execute('select user from dual', [], function(err, result) {
+    connection.execute('SELECT user FROM staff ', [], function(err, result) {
       if (err) {error = err; return;}
 
       user = result.rows[0][0];
