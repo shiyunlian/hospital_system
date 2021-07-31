@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-var searchValue=4
+var searchValue="phil"
 //filter rows to only include search value
 const search = (data, value) => {
   //if value is empty, just return all data
@@ -110,9 +110,9 @@ const search = (data, value) => {
     return data
   }
   //check if the value is a number or string, if it is a number search by id, if string search by name
-  if (typeof value == "number"){
+  if (!isNaN(value)){
     return data.filter((row) => {
-      return row.id==value
+      return row.id.toString()==value
     })
   }
   else{
@@ -122,6 +122,7 @@ const search = (data, value) => {
   }
 };
 const searchResult = search(rows, searchValue)
+
 
 
 export default function PatientTable() {
