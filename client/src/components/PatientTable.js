@@ -72,6 +72,28 @@ const rows = [
     "8/1/2021",
     111.11
   ),
+  createData(
+    4,
+    "Jane Doe",
+    "M",
+    "1980-1-1",
+    "COVID-19",
+    "7/1/2021",
+    "1",
+    "8/1/2021",
+    111.11
+  ),
+  createData(
+    5,
+    "Phil Dot",
+    "M",
+    "1980-1-1",
+    "COVID-19",
+    "7/1/2021",
+    "1",
+    "8/1/2021",
+    111.11
+  ),
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -79,6 +101,28 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
 }));
+
+var searchValue=4
+//filter rows to only include search value
+const search = (data, value) => {
+  //if value is empty, just return all data
+  if(value=="") {
+    return data
+  }
+  //check if the value is a number or string, if it is a number search by id, if string search by name
+  if (typeof value == "number"){
+    return data.filter((row) => {
+      return row.id==value
+    })
+  }
+  else{
+    return data.filter((row) => {
+      return row.name.toLowerCase().includes(value.toLowerCase())
+    })
+  }
+};
+const searchResult = search(rows, searchValue)
+
 
 export default function PatientTable() {
   const classes = useStyles();
@@ -118,7 +162,7 @@ export default function PatientTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {searchResult.map((row) => (
             <TableRow key={row.id}>
               <TableCell align="center">{row.id}</TableCell>
               <TableCell align="center" component={Link} to="/patientID">
