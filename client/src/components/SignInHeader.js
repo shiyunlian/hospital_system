@@ -77,6 +77,7 @@ const SignInHeader = () => {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
+              onChange = {(event) => props.getSearchValue(event.target.value)}
             />
           </div>
           <div className={classes.grow} />

@@ -14,7 +14,7 @@ import {
 /***************************************************************
  Create a file for showing patient list and delete records
  * ************************************************************/
-const Patient = () => {
+const Patient = ({searchValue}) => {
     const [patients, setPatient] = useState([]);
 
     useEffect(() => {
@@ -32,6 +32,26 @@ const Patient = () => {
         await axios.delete('http://localhost:8000/patients/' + id);
         loadPatients();
     };
+
+     //filter rows to only include search value
+  const search = (data, value) => {
+    console.log("VALUE: "+value)
+    //if value is empty, just return all data
+    if(value=="") {
+      return data
+    }
+    //check if the value is a number or string, if it is a number search by id, if string search by name
+    if (!isNaN(value)){
+      return data.filter((row) => {
+        return row.id.toString()==value
+      })
+    }
+    else{
+      return data.filter((row) => {
+        return row.name.toLowerCase().includes(value.toLowerCase())
+      })
+    }
+  };
 
 
     return  (  
@@ -72,7 +92,7 @@ const Patient = () => {
                     </thead>
                     <tbody>
                         {
-                            patients.map((patient, index) => (
+                            search(patients, searchValue).map((patient, index) => (
                                 <tr>
                                     <th scope="row">{index+1}</th>
                                     <td>{patient.patientID}</td>
