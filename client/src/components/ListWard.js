@@ -83,7 +83,7 @@ const Ward = () => {
                 <td>
                   <Link
                     class="btn btn-outline-primary mr-2"
-                    to={"/wards/edit/${ward.id}"}
+                    to={"/wards/edit/${ward.WARDID}"}
                   >
                     Edit
                   </Link>

@@ -84,14 +84,14 @@ const Pharmacy = () => {
                 <td>
                   <Link
                     class="btn btn-outline-primary mr-2"
-                    to={"/pharmacys/edit/${pharmacy.id}"}
+                    to={"/pharmacys/edit/${pharmacy.PHARMACYID}"}
                   >
                     Edit
                   </Link>
 
                   <Link
                     class="btn btn-danger"
-                    onClick={() => deletePharmacy(pharmacy.id)}
+                    onClick={() => deletePharmacy(pharmacy.PHARMACYID)}
                   >
                     Delete
                   </Link>

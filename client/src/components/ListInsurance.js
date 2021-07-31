@@ -80,14 +80,14 @@ const Insurance = () => {
                 <td>
                   <Link
                     class="btn btn-outline-primary mr-2"
-                    to={"/insurances/edit/${insurance.id}"}
+                    to={"/insurances/edit/${insurance.INSURANCEID}"}
                   >
                     Edit
                   </Link>
 
                   <Link
                     class="btn btn-danger"
-                    onClick={() => deleteInsurance(insurance.id)}
+                    onClick={() => deleteInsurance(insurance.INSURANCEID)}
                   >
                     Delete
                   </Link>
