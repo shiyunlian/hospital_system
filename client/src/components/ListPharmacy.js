@@ -19,34 +19,6 @@ const Pharmacy = () => {
 
   if (!pharmacys) return null;
 
-  const deletePharmacy = (id) => {
-    axios.delete(`${url}/${id}`).then(() => {
-      alert("Pharmacy record deleted!");
-    });
-  };
-
-  // useEffect(() => {
-  //     loadPharmacys();
-  // }, []);
-
-  // //Get request using Axios http
-  // const loadPharmacys = async () => {
-  //     const result = await axios.get("http://localhost:8000/pharmacys");
-  //     setPharmacy(result.data.reverse());
-  // };
-
-  // //delete pharmacy records using axios http
-  // const deletePharmacy = async id => {
-  //     await axios.delete('http://localhost:8000/pharmacys/' + id);
-  //     loadPharmacys();
-  // };
-
-  const test = () => {
-    console.log(pharmacys);
-  };
-
-  test();
-
   return (
     <div className="container">
       <div className="py-4">
@@ -54,11 +26,6 @@ const Pharmacy = () => {
         <Navbar color="dark" dark>
           <Container>
             <NavbarBrand href="/pharmacys">Pharmacy List</NavbarBrand>
-            <Nav>
-              <Link className="btn btn-primary" to="/pharmacys/add">
-                Add Pharmacy
-              </Link>
-            </Nav>
           </Container>
         </Navbar>
         <div className="row"></div>
@@ -71,7 +38,6 @@ const Pharmacy = () => {
               <th scope="col">Pharmacy ID</th>
               <th scope="col">Pharmacy Name</th>
               <th scope="col">Business Hour</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -81,21 +47,6 @@ const Pharmacy = () => {
                 <td>{pharmacy.PHARMACYID}</td>
                 <td>{pharmacy.NAME}</td>
                 <td>{pharmacy.OPERATIONHOUR}</td>
-                <td>
-                  <Link
-                    class="btn btn-outline-primary mr-2"
-                    to={"/pharmacys/edit/${pharmacy.PHARMACYID}"}
-                  >
-                    Edit
-                  </Link>
-
-                  <Link
-                    class="btn btn-danger"
-                    onClick={() => deletePharmacy(pharmacy.PHARMACYID)}
-                  >
-                    Delete
-                  </Link>
-                </td>
               </tr>
             ))}
           </tbody>

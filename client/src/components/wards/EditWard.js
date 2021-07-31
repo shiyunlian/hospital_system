@@ -7,36 +7,52 @@ import { useHistory, useParams } from 'react-router-dom';
  * Create a file for editing a ward and create stateful component addward
  *****************************************************************************************/
 
+ const url = "http://localhost:8090/wards";
+
 const EditWard= () => {
     let history = useHistory();
     const [ward, setWard] = useState({
-        wardID: '',
-        bedNumber: '',
-        patientId: ''
+        WARDID: '',
+        BEDID: '',
+        PATIENTID: ''
     });
+    
+   const { WARDID, BEDID, PATIENTID} = ward;
 
-   const { wardID, bedNumber, patientId} = ward;
 
    const onInputChange = e => {
        setWard({ ...ward, [e.target.name]: e.target.value });
    };
 
-   useEffect(() => {
-       loadward();
-   }, []);
-
-   const onSubmit = async e => {
+   const onSubmit = e => {
     e.preventDefault();
-    await Axios.post("http://localhost:8000/wards", ward);
+    axios.post(url, ward)
+    .then((response) => {
+       setWard(response.data);
+     
+    });
+    
     history.push("/wards");
-};
+    };
 
-//get edit ward information and post to db.json
-   const loadward  = async () =>
-   {
-       const result = await axios.get('http://localhost:8000/wards/${ward.id}');
-       setWard(result.data);
-   };
+    React.useEffect(() => {
+        axios.get('${url}/{WARDID}').then((response) => {
+          setWard(response.data);
+        });
+    }, []);
+
+      
+
+        const onSubmit = e => {
+            e.preventDefault();
+            axios.put('${url}/{WARDID}', ward)
+            .then((response) => {
+            setPatient(response.data);
+            });
+        
+        history.push("/wards");
+        };
+
 
 
     return(

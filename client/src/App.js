@@ -7,12 +7,8 @@ import InsuranceScreen from "./InsuranceScreen";
 import AccountScreen from "./AccountScreen";
 import AddPatient from "./components/patients/AddPatient";
 import EditPatient from "./components/patients/EditPatient";
-import AddPharmacy from "./components/pharmacys/AddPharmacy";
-import AddWard from "./components/wards/AddWard";
-import EditPharmacy from "./components/pharmacys/EditPharmacy";
 import EditWard from "./components/wards/EditWard";
-import AddInsurance from "./components/insurances/AddInsurance";
-import EditInsurance from "./components/insurances/EditInsurance";
+
 
 function App() {
   return (
@@ -43,27 +39,12 @@ function App() {
           <Route exact path="/patients/add">
             <AddPatient />
           </Route>
-          <Route exact path="/pharmacys/add">
-            <AddPharmacy />
-          </Route>
-          <Route exact path="/wards/add">
-            <AddWard />
-          </Route>
-          <Route exact path="/insurances/add">
-            <AddInsurance />
-          </Route>
           <Route exact path="/patients/edit/:id">
             <EditPatient />
           </Route>
-          <Route exact path="/pharmacys/edit/:id">
-            <EditPharmacy />
-          </Route>
           <Route exact path="/wards/edit/:id">
             <EditWard />
-          </Route>
-          <Route exact path="/insurances/edit/:id">
-            <EditInsurance />
-          </Route>
+          </Route>  
         </Switch>
       </div>
     </Router>

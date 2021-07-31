@@ -4,10 +4,14 @@ import { Link } from "react-router-dom";
 import { Link as NavLink } from "react-router-dom";
 
 import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
-const url = "http://localhost:8090/insurances";
+
+
 /***************************************************************
  Create a file for showing insurance list and delete records
  * ************************************************************/
+
+ const url = "http://localhost:8090/insurances";
+
 const Insurance = () => {
   const [insurances, setInsurance] = useState([]);
 
@@ -25,21 +29,6 @@ const Insurance = () => {
     });
   };
 
-  // useEffect(() => {
-  //   loadInsurances();
-  // }, []);
-
-  // //Get request using Axios http
-  // const loadInsurances = async () => {
-  //   const result = await axios.get("http://localhost:8000/insurances");
-  //   setInsurance(result.data.reverse());
-  // };
-
-  // //delete insurance records using axios http
-  // const deleteInsurance = async (id) => {
-  //   await axios.delete("http://localhost:8000/insurances/" + id);
-  //   loadInsurances();
-  // };
 
   return (
     <div className="container">
@@ -48,11 +37,6 @@ const Insurance = () => {
         <Navbar color="dark" dark>
           <Container>
             <NavbarBrand href="/insurances">Insurance List</NavbarBrand>
-            <Nav>
-              <Link className="btn btn-primary" to="/insurances/add">
-                Add Insurance
-              </Link>
-            </Nav>
           </Container>
         </Navbar>
         <div className="row"></div>
@@ -66,7 +50,6 @@ const Insurance = () => {
               <th scope="col">Insurance Name</th>
               <th scope="col">Insurance Phone</th>
               <th scope="col">Insurance Address</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -77,21 +60,6 @@ const Insurance = () => {
                 <td>{insurance.NAME}</td>
                 <td>{insurance.PHONENUM}</td>
                 <td>{insurance.ADDRESS}</td>
-                <td>
-                  <Link
-                    class="btn btn-outline-primary mr-2"
-                    to={"/insurances/edit/${insurance.INSURANCEID}"}
-                  >
-                    Edit
-                  </Link>
-
-                  <Link
-                    class="btn btn-danger"
-                    onClick={() => deleteInsurance(insurance.INSURANCEID)}
-                  >
-                    Delete
-                  </Link>
-                </td>
               </tr>
             ))}
           </tbody>
