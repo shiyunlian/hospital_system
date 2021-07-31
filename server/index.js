@@ -436,6 +436,56 @@ app.get("/wards", (req, res) => {
   });
 });
 
+// Http Method: GET
+// URI: /pharmacy
+// Read all the pharmacy records
+app.get("/pharmacy", (req, res) => {
+  oracledb.getConnection(connAttrs, (err, connection) => {
+    if (err) {
+      // Error connecting to DB
+      res.set("Content-Type", "application/json");
+      res.status(500).send(
+        JSON.stringify({
+          status: 500,
+          message: "Error connecting to DB",
+          detailed_message: err.message,
+        })
+      );
+      return;
+    }
+    connection.execute(
+      "select * from pharmacy",
+      {},
+      {
+        outFormat: oracledb.OBJECT,
+      },
+      (err, result) => {
+        if (err) {
+          res.set("Content-Type", "application/json");
+          res.status(500).send(
+            JSON.stringify({
+              status: 500,
+              message: "Error getting the patient info",
+              detailed_message: err.message,
+            })
+          );
+        } else {
+          res.contentType("application/json").status(200);
+          res.send(JSON.stringify(result.rows));
+        }
+        if (connection) {
+          try {
+            connection.close();
+            console.log("close connection success");
+          } catch (err) {
+            console.error(err.message);
+          }
+        }
+      }
+    );
+  });
+});
+
 //set port, listen for requests
 const PORT = process.env.PORT || 8090;
 app.listen(PORT, () => {
