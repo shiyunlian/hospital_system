@@ -6,7 +6,7 @@ import { useHistory, useParams } from 'react-router-dom';
 /****************************************************************************************
  * Create a file for editing a patient and create stateful component addPatient
  *****************************************************************************************/
-
+ const url = "http://localhost:8090/Patients";
 const EditPatient = () => {
     let history = useHistory();
     const { id } = useParams();
@@ -21,21 +21,39 @@ const EditPatient = () => {
         billId: ""
     });
 
-    const { patientID, name, gender, dob, diagnosis, hospitalizedDate, ward, dischargedDate, billId} = patient;
+    const { patientID, name, gender, dob, diagnosis, hospitalizedDate, dischargedDate, billId} = patient;
 
    const onInputChange = e => {
        setPatient({ ...patient, [e.target.name]: e.target.value });
    };
 
+   React.useEffect(() => {
+    axios.get('${url}/1').then((response) => {
+      setPatient(response.data);
+    });
+    }, []);
+
    useEffect(() => {
        loadPatient();
    }, []);
 
+   /*
    const onSubmit = async e => {
-    e.preventDefault();
-    await Axios.post("http://localhost:8000/patients", patient);
+        e.preventDefault();
+        await Axios.post("http://localhost:8000/patients", patient);
+        history.push("/patients");
+    };
+    */
+    
+    const onSubmit = e => {
+        e.preventDefault();
+        axios.put('${url}/1', patient)
+        .then((response) => {
+        setPatient(response.data);
+    });
+    
     history.push("/patients");
-};
+    };
 
 //get edit patient information and post to db.json
    const loadPatient  = async () =>

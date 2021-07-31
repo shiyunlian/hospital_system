@@ -1,11 +1,11 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 
 /****************************************************************************************
  * Create a file for adding a patient and create stateful component addPatient
  *****************************************************************************************/
-
+const url = "http://localhost:8090/Patients";
 const AddPatient = () => {
     let history = useHistory();
     const [patient, setPatient] = useState({
@@ -26,12 +26,31 @@ const AddPatient = () => {
        setPatient({ ...patient, [e.target.name]: e.target.value });
    };
 
+   React.useEffect(() => {
+    axios.get('${url}/1').then((response) => {
+      setPatient(response.data);
+    });
+    }, []);
+
+  const onSubmit = e => {
+    e.preventDefault();
+    axios.post(url, patient)
+    .then((response) => {
+       setPatient(response.data);
+     
+    });
+    
+    history.push("/patients");
+    };
+
    //post add patient record to db.json
+   /*
    const onSubmit = async e => {
        e.preventDefault();
        await Axios.post("http://localhost:8000/patients", patient);
        history.push("/patients");
    };
+   */
 
 
     return(
