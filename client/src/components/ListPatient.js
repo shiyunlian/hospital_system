@@ -105,7 +105,7 @@ const Patient = ({searchValue}) => {
           </thead>
           <tbody>
             {search(patients, searchValue).map((patient, index) => (
-              <tr key={index}>
+              <tr key={index}>         
                 <th scope="row">{index + 1}</th>
                 <td>{patient.PATIENTID}</td>
                 <td>{patient.FIRSTNAME}</td>
