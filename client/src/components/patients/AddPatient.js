@@ -27,7 +27,7 @@ const AddPatient = () => {
    };
 
    React.useEffect(() => {
-    axios.get('${url}/1').then((response) => {
+    axios.get('${url}/{patientId}').then((response) => {
       setPatient(response.data);
     });
     }, []);

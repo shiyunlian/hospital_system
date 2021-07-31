@@ -28,7 +28,7 @@ const EditPatient = () => {
    };
 
    React.useEffect(() => {
-    axios.get('${url}/1').then((response) => {
+    axios.get('${url}/{patientId}').then((response) => {
       setPatient(response.data);
     });
     }, []);
@@ -47,7 +47,7 @@ const EditPatient = () => {
     
     const onSubmit = e => {
         e.preventDefault();
-        axios.put('${url}/1', patient)
+        axios.put('${url}/{patientId}', patient)
         .then((response) => {
         setPatient(response.data);
     });
@@ -56,11 +56,13 @@ const EditPatient = () => {
     };
 
 //get edit patient information and post to db.json
+/*
    const loadPatient  = async () =>
    {
        const result = await axios.get('http://localhost:8000/patients/${patient.id}');
        setPatient(result.data);
    };
+   */
 
 
     return(
