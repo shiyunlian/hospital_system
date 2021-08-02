@@ -1,148 +1,282 @@
 {
   "patients": [
     {
-      "patientID": "120",
-      "firstname": "Alex",
-      "lastname": "Morgan",
-      "gender": "Male",
-      "dob": "02/01/2021",
-      "diagnosis": "flu",
-      "hospitalized_date": "06/01/2021",
-      "discharged_date": "07/20/2021",
-      "billId": "1020",
+      "patientID": "P10001",
+      "firstname": "Mike",
+      "lastname": "Newton",
+      "gender": "M",
+      "dob": "1978-2-3",
+      "diagnosis": "COVID-19",
+      "hospitalized_date": "2020-12-8",
+      "discharged_date": "2021-2-2",
+      "billId": "B10001",
+      "id": 1
+    },
+    {
+      "patientID": "P10002",
+      "firstname": "David",
+      "lastname": "Taylor",
+      "gender": "M",
+      "dob": "1959-10-11",
+      "diagnosis": "COVID-19",
+      "hospitalized_date": "2020-12-8",
+      "discharged_date": "2021-2-2",
+      "billId": "B10002",
+      "id": 2
+    },
+    {
+      "patientID": "P10003",
+      "firstname": "John",
+      "lastname": "Smith",
+      "gender": "M",
+      "dob": "1987-8-21",
+      "diagnosis": "COVID-19",
+      "hospitalized_date": "2020-12-8",
+      "discharged_date": "2021-2-2",
+      "billId": "B10003",
+      "id": 3
+    },
+    {
+      "patientID": "P10004",
+      "firstname": "Jack",
+      "lastname": "Davis",
+      "gender": "M",
+      "dob": "1975-4-23",
+      "diagnosis": "COVID-19",
+      "hospitalized_date": "2020-12-8",
+      "discharged_date": "2021-2-2",
+      "billId": "B10004",
       "id": 4
     },
     {
-      "patientID": "125",
-      "firstname": "David",
-      "lastname": "Cross",
-      "gender": "Male",
-      "dob": "11/24/2021",
-      "diagnosis": "Cancer",
-      "hospitalized_date": "06/07/2021",
-      "discharged_date": "06/08/2021",
-      "billId": "1233",
+      "patientID": "P10005",
+      "firstname": "Steve",
+      "lastname": "Miller",
+      "gender": "M",
+      "dob": "1967-12-3",
+      "diagnosis": "COVID-19",
+      "hospitalized_date": "2020-12-8",
+      "discharged_date": "2021-2-2",
+      "billId": "B10005",
       "id": 5
     },
     {
-      "patientID": "301",
-      "firstname": "Bill",
-      "lastname": "Burr",
-      "gender": "Male",
-      "dob": "05/20/1999",
-      "diagnosis": "Covid 19",
-      "hospitalized_date": "06/12/2021",
-      "discharged_date": "06/14/2021",
-      "billId": "1200",
+      "patientID": "P10006",
+      "firstname": "John",
+      "lastname": "Smith",
+      "gender": "M",
+      "dob": "1987-8-21",
+      "diagnosis": "COVID-19",
+      "hospitalized_date": "2020-12-8",
+      "discharged_date": "2021-2-2",
+      "billId": "B10003",
       "id": 6
     },
     {
-      "patientID": "102",
-      "firstname": "Amy",
-      "lastname": "Monta",
-      "gender": "F",
-      "dob": "02/02/1989",
-      "diagnosis": "Obesity",
-      "hospitalized_date": "02/01/2021",
-      "discharged_date": "06/01/2021",
-      "billId": "1011",
-      "id": 7
+      "patientID": "P10007",
+      "firstname": "Jack",
+      "lastname": "Davis",
+      "gender": "M",
+      "dob": "1975-4-23",
+      "diagnosis": "COVID-19",
+      "hospitalized_date": "2020-12-8",
+      "discharged_date": "2021-2-2",
+      "billId": "B10004",
+      "id": 6
     },
     {
-      "patientID": "201",
-      "firstname": "Clinton",
-      "lastname": "Bill",
+      "patientID": "P10008",
+      "firstname": "Steve",
+      "lastname": "Miller",
       "gender": "M",
-      "dob": "01/01/1876",
-      "diagnosis": "Flu",
-      "hospitalized_date": "01/01/2021",
-      "discharged_date": "01/03/2021",
-      "billId": "1002",
-      "id": 8
+      "dob": "1967-12-3",
+      "diagnosis": "COVID-19",
+      "hospitalized_date": "2020-12-8",
+      "discharged_date": "2021-2-2",
+      "billId": "B10005",
+      "id": 7
     }
   ],
   "pharmacys": [
     {
-      "pharmacyID": "120",
-      "name": "CVS",
-      "address": "123 One St, San Jose",
+      "pharmacyID": "P101",
+      "name": "Family Pharmacy",
+      "address": "9:00-18:00 Mon-Fri",
       "id": 1
     },
     {
-      "pharmacyID": "121",
-      "name": "Walgreen",
-      "address": "456 Washington blvd, San Francisco",
+      "pharmacyID": "P102",
+      "name": "Good Neighbor Pharmacy",
+      "address": "9:00-18:00 Mon-Fri",
       "id": 3
     },
     {
-      "pharmacyID": "145",
-      "name": "CVS",
-      "address": "789 Columbus St, San Jose",
+      "pharmacyID": "P103",
+      "name": "Rite Aid",
+      "address": "9:00-18:00 Mon-Fri",
+      "id": 4
+    },
+    {
+      "pharmacyID": "P104",
+      "name": "Walgreens",
+      "address": "9:00-18:00 Mon-Fri",
+      "id": 1
+    },
+    {
+      "pharmacyID": "P105",
+      "name": "CVS Pharmacy",
+      "address": "9:00-18:00 Mon-Fri",
+      "id": 3
+    },
+    {
+      "pharmacyID": "P106",
+      "name": "Bartell Drugs",
+      "address": "9:00-18:00 Mon-Fri",
+      "id": 4
+    },
+    {
+      "pharmacyID": "P107",
+      "name": "Medicine Shoppe Pharmacy",
+      "address": "9:00-18:00 Mon-Fri",
+      "id": 4
+    },
+    {
+      "pharmacyID": "P108",
+      "name": "'Health Mart",
+      "address": "9:00-18:00 Mon-Fri",
+      "id": 1
+    },
+    {
+      "pharmacyID": "P109",
+      "name": "Discount Drug Mart",
+      "address": "9:00-18:00 Mon-Fri",
+      "id": 3
+    },
+    {
+      "pharmacyID": "P110",
+      "name": "Valu-Rite",
+      "address": "9:00-18:00 Mon-Fri",
       "id": 4
     }
   ],
   "wards": [
     {
-      "wardId": "121",
-      "bedNumber": "8",
-      "patientId": "120",
-      "id": 3
+      "wardId": "W1",
+      "bedNumber": "B1",
+      "patientId": "P10001"
     },
     {
-      "wardId": "110",
-      "bedNumber": "3",
-      "patientId": "125",
-      "id": 4
+      "wardId": "W1",
+      "bedNumber": "B2",
+      "patientId": ""
     },
     {
-      "wardId": "124",
-      "bedNumber": "6",
-      "patientId": "101",
-      "id": 5
+      "wardId": "W2",
+      "bedNumber": "B1",
+      "patientId": "P10002"
     },
     {
-      "wardId": "102",
-      "bedNumber": "8",
-      "patientId": "101",
-      "id": 6
+      "wardId": "W2",
+      "bedNumber": "B2",
+      "patientId": "P10003"
+    },
+    {
+      "wardId": "W3",
+      "bedNumber": "B1",
+      "patientId": "P10004"
+    },
+    {
+      "wardId": "W3",
+      "bedNumber": "B2",
+      "patientId": "P10005"
+    },
+    {
+      "wardId": "W4",
+      "bedNumber": "B1",
+      "patientId": "P10006"
+    },
+    {
+      "wardId": "W4",
+      "bedNumber": "B2",
+      "patientId": "P10007"
+    },
+    {
+      "wardId": "W1",
+      "bedNumber": "B1",
+      "patientId": "P10007"
+    },
+    {
+      "wardId": "W5",
+      "bedNumber": "B1",
+      "patientId": "P10008"
+    },
+    {
+      "wardId": "W5",
+      "bedNumber": "B1",
+      "patientId": ""
+    },
+    {
+      "wardId": "W6",
+      "bedNumber": "B1",
+      "patientId": ""
     }
   ],
   "insurances": [
     {
-      "patientID": "120",
-      "insuranceID": "121",
-      "insuranceNumber": "12321321432",
-      "name": "Kaiser",
-      "phone": "800111222",
-      "address": "123 One Street, San Jose",
+      "insuranceID": "I101",
+      "name": "UnitedHealth",
+      "phone": "(888) 835-9637",
+      "address": "4699 Old Ironsides Dr, Santa Clara, CA 95054",
       "id": 1
     },
     {
-      "patientID": "125",
-      "insuranceID": "210",
-      "insuranceNumber": "12321321432",
-      "name": "Blue Shield",
-      "phone": "800900222",
-      "address": "234 BroadWat Street, San Jose",
+      "insuranceID": "I102",
+      "name": "Kaiser Foundation",
+      "phone": "(408) 703-8261",
+      "address": "220 E Hacienda Ave, Campbell, CA 95008",
       "id": 2
     },
     {
-      "patientID": "301",
-      "insuranceID": "121",
-      "insuranceNumber": "31243215432",
-      "name": "Jackson Doe",
-      "phone": "510000000",
-      "address": "124324 Third St, Santa Clara",
+      "insuranceID": "I103",
+      "name": "Anthem Inc.",
+      "phone": "(925) 927-6000",
+      "address": "2121 N California Blvd, Walnut Creek, CA 94596",
       "id": 3
     },
     {
-      "patientID": "211",
-      "insuranceID": "123",
-      "insuranceNumber": "124321",
-      "name": "Amy Lee",
-      "phone": "123432543",
-      "address": "543 Jackson St, Mountain View, CA 94501",
+      "insuranceID": "I104",
+      "name": "Humana'",
+      "phone": "(408) 675-3531",
+      "address": "2712 Homestead Rd, Santa Clara, CA 95051",
+      "id": 4
+    },
+    {
+      "insuranceID": "I105",
+      "name": "Cigna Health",
+      "phone": "(800) 244-6224'",
+      "address": "1340 Treat Blvd #599, Walnut Creek, CA 94597",
       "id": 5
+    },
+    {
+      "insuranceID": "I106",
+      "name": "Blue Cross of California",
+      "phone": "(415) 617-1700",
+      "address": "2 Embarcadero Center, San Francisco, CA 94111",
+      "id": 6
+    },
+    {
+      "insuranceID": "I107",
+      "name": "Independence Health Group Inc.",
+      "phone": "(559) 802-1105",
+      "address": "879 E Merritt Ave, Tulare, CA 93274",
+      "id": 7
+    },
+    {
+      "insuranceID": "I108",
+      "name": "Oscar Health Plan of California.",
+      "phone": "+13109096135",
+      "address": "11620 Wilshire Blvd #900, Los Angeles, CA 90025",
+      "id": 8
     }
   ]
 }

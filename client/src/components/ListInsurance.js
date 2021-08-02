@@ -41,9 +41,7 @@ const Insurance = () => {
                 <Navbar color="dark" dark>
                     <Container>
                     <NavbarBrand href="/insurances">Insurance List</NavbarBrand>
-                    <Nav>
-                        <Link className="btn btn-primary" to ="/insurances/add">Add Insurance</Link>
-                    </Nav>
+            
                     </Container>
 
                 </Navbar>
@@ -56,9 +54,9 @@ const Insurance = () => {
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Number</th>
-                            <th scope="col">Patient ID</th>
+               
                             <th scope="col">Insurance ID</th>
-                            <th scope="col">Insurance Number</th>
+                       
                             <th scope="col">Insurance Name</th>
                             <th scope="col">Insurance Phone</th>
                             <th scope="col">Insurance Address</th>
@@ -70,9 +68,9 @@ const Insurance = () => {
                             insurances.map((insurance, index) => (
                                 <tr>
                                     <th scope="row">{index+1}</th>
-                                    <td>{insurance.patientID}</td>
+                                  
                                     <td>{insurance.insuranceID}</td>
-                                    <td>{insurance.insuranceNumber}</td>
+                                 
                                     <td>{insurance.name}</td>
                                     <td>{insurance.phone}</td>
                                     <td>{insurance.address}</td>

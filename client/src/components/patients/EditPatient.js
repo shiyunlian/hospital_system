@@ -18,12 +18,11 @@ const EditPatient = () => {
         dob: "",
         diagnosis: "",
         hospitalized_date: "",
-        ward: "",
         discharged_date: "",
-        bill: ""
+        billId: ""
     });
 
-    const { patientID, firstname, lastname, gender, dob, diagnosis, hospitalized_date, ward, discharged_date, bill} = patient;
+    const { patientID, firstname, lastname, gender, dob, diagnosis, hospitalized_date, discharged_date, billId} = patient;
 
    const onInputChange = e => {
        setPatient({ ...patient, [e.target.name]: e.target.value });
@@ -35,6 +34,7 @@ const EditPatient = () => {
 
    const onSubmit = async e => {
     e.preventDefault();
+    //await Axios.post("http://localhost:8000/patients", patient);
     await Axios.post("http://localhost:8000/patients", patient);
     history.push("/patients");
 };
@@ -42,7 +42,8 @@ const EditPatient = () => {
 //get edit patient information and post to db.json
    const loadPatient  = async () =>
    {
-       const result = await axios.get('http://localhost:8000/patients/${patient.id}');
+       //const result = await axios.get('http://localhost:8000/patients/${patient.id}');
+       const result = await axios.get('http://localhost:8000/patients/${patient.patientID}');
        setPatient(result.data);
    };
 
@@ -130,17 +131,6 @@ const EditPatient = () => {
                             />
                         </div>
 
-                        <div class="form-group">
-                            <input
-                                type="text"
-                                className="form-control form-control-lg"
-                                placeholder="Enter Patient Ward"
-                                name="ward"
-                                value={ward}
-                                onChange={ e => onInputChange(e)}
-                            />
-                        </div>
-
 
                         <div class="form-group">
                             <input
@@ -157,9 +147,9 @@ const EditPatient = () => {
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient Bill"
-                                name="bill"
-                                value={bill}
+                                placeholder="Enter Patient  billId"
+                                name=   "billId"
+                                value=  {billId}
                                 onChange={ e => onInputChange(e)}
                             />
                         </div>

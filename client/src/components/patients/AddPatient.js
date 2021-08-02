@@ -132,7 +132,7 @@ const AddPatient = () => {
                             <input
                                 type="text"
                                 className="form-control form-control-lg"
-                                placeholder="Enter Patient Id"
+                                placeholder="Enter Bill Id"
                                 name="billId"
                                 value={billId}
                                 onChange={ e => onInputChange(e)}

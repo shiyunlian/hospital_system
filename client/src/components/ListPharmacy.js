@@ -36,9 +36,7 @@ const Pharmacy = () => {
                 <Navbar color="dark" dark>
                     <Container>
                     <NavbarBrand href="/pharmacys">Pharmacy List</NavbarBrand>
-                    <Nav>
-                        <Link className="btn btn-primary" to ="/pharmacys/add">Add Pharmacy</Link>
-                    </Nav>
+                 
                     </Container>
 
                 </Navbar>
@@ -60,7 +58,7 @@ const Pharmacy = () => {
                     <tbody>
                         {
                             pharmacys.map((pharmacy, index) => (
-                                <tr>
+                                <tr key={index} >
                                     <th scope="row">{index+1}</th>
                                     <td>{pharmacy.pharmacyID}</td>
                                     <td>{pharmacy.name}</td>
