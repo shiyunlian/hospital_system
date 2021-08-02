@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 /****************************************************************************************
  * Create a file for adding a patient and create stateful component addPatient
  *****************************************************************************************/
-const url = "http://localhost:8020/patients";
+const url = "http://localhost:4000/patients";
 const AddPatient = () => {
   let history = useHistory();
   const [patient, setPatient] = useState({

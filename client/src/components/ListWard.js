@@ -5,7 +5,7 @@ import { Link as NavLink } from "react-router-dom";
 
 import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
 
-const url = "http://localhost:8090/wards";
+const url = "http://localhost:4000/wards";
 /***************************************************************
  Create a file for showing Ward list and delete records
  * ************************************************************/
@@ -19,7 +19,6 @@ const Ward = () => {
   }, []);
 
   if (!wards) return null;
-
 
   return (
     <div className="container">

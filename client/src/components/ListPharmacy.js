@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Link as NavLink } from "react-router-dom";
 
 import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
-const url = "http://localhost:8090/pharmacy";
+const url = "http://localhost:4000/pharmacy";
 /***************************************************************
  Create a file for showing pharmacy list and delete records
  * ************************************************************/

@@ -5,12 +5,11 @@ import { Link as NavLink } from "react-router-dom";
 
 import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
 
-
 /***************************************************************
  Create a file for showing insurance list and delete records
  * ************************************************************/
 
- const url = "http://localhost:8090/insurances";
+const url = "http://localhost:4000/insurances";
 
 const Insurance = () => {
   const [insurances, setInsurance] = useState([]);
@@ -28,7 +27,6 @@ const Insurance = () => {
       alert("Insurance record deleted!");
     });
   };
-
 
   return (
     <div className="container">

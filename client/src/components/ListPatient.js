@@ -9,7 +9,7 @@ import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
  Create a file for showing patient list and delete records
  * ************************************************************/
 
-const url = "http://localhost:8020/patients";
+const url = "http://localhost:4000/patients";
 
 const Patient = ({ searchValue }) => {
   const [patients, setPatient] = useState([]);
@@ -21,7 +21,6 @@ const Patient = ({ searchValue }) => {
   //   });
   // }, []);
   // if (!patients) return null;
-
   useEffect(() => {
     loadPatients();
   }, []);
