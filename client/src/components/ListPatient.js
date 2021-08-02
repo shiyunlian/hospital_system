@@ -59,7 +59,7 @@ const Patient = ({ searchValue }) => {
   const search = (data, value) => {
     console.log("VALUE: " + value);
     //if value is empty, just return all data
-    if (value == "") {
+    if (value === "") {
       return data;
     }
     //check if the value is a number or string, if it is a number search by id, if string search by name
@@ -70,8 +70,8 @@ const Patient = ({ searchValue }) => {
     } else {
       return data.filter((row) => {
         return (
-          row.firstname.toLowerCase().includes(value.toLowerCase()) ||
-          row.lastname.toLowerCase().includes(value.toLowerCase())
+          row.FIRSTNAME.toLowerCase().includes(value.toLowerCase()) ||
+          row.LASTNAME.toLowerCase().includes(value.toLowerCase())
         );
       });
     }
