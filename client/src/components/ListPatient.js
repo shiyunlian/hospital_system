@@ -9,25 +9,28 @@ import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
  Create a file for showing patient list and delete records
  * ************************************************************/
 
-const url = "http://localhost:8090/patients";
+const url = "http://localhost:8020/patients";
 
-const Patient = ({searchValue}) => {
+const Patient = ({ searchValue }) => {
   const [patients, setPatient] = useState([]);
 
+  // useEffect(() => {
+  //   axios.get(url).then((response) => {
+  //     console.log("PATEINTs: "+response.data)
+  //     setPatient(response.data);
+  //   });
+  // }, []);
+  // if (!patients) return null;
+
   useEffect(() => {
-    axios.get(url).then((response) => {
-      console.log("PATEINTs: "+response.data)
-      setPatient(response.data);
-    });
+    loadPatients();
   }, []);
 
-  if (!patients) return null;
-
-  /*
-    useEffect(() => {
-        loadPatients();
-    }, []);
-    */
+  const loadPatients = () => {
+    axios.get(url).then((response) => {
+      setPatient(response.data);
+    });
+  };
 
   //Get request using Axios http
   /*
@@ -48,26 +51,29 @@ const Patient = ({searchValue}) => {
   const deletePatient = (id) => {
     axios.delete(`${url}/${id}`).then(() => {
       alert("Patient record deleted!");
+      loadPatients();
     });
   };
 
   //filter rows to only include search value
   const search = (data, value) => {
-    console.log("VALUE: "+value)
+    console.log("VALUE: " + value);
     //if value is empty, just return all data
-    if(value=="") {
-      return data
+    if (value == "") {
+      return data;
     }
     //check if the value is a number or string, if it is a number search by id, if string search by name
-    if (!isNaN(value)){
+    if (!isNaN(value)) {
       return data.filter((row) => {
-        return row.patientID.toString().includes(value)
-      })
-    }
-    else{
+        return row.patientID.toString().includes(value);
+      });
+    } else {
       return data.filter((row) => {
-        return (row.firstname.toLowerCase().includes(value.toLowerCase()) || row.lastname.toLowerCase().includes(value.toLowerCase()))
-      })
+        return (
+          row.firstname.toLowerCase().includes(value.toLowerCase()) ||
+          row.lastname.toLowerCase().includes(value.toLowerCase())
+        );
+      });
     }
   };
 
@@ -105,7 +111,7 @@ const Patient = ({searchValue}) => {
           </thead>
           <tbody>
             {search(patients, searchValue).map((patient, index) => (
-              <tr key={index}>         
+              <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>{patient.PATIENTID}</td>
                 <td>{patient.FIRSTNAME}</td>
@@ -119,14 +125,14 @@ const Patient = ({searchValue}) => {
                 <td>
                   <Link
                     class="btn btn-primary mr-2"
-                    to={"/patients/view/${patient.PATIENTID}"}
+                    to={`/patients/${patient.PATIENTID}`}
                   >
                     View
                   </Link>
 
                   <Link
                     class="btn btn-outline-primary mr-2"
-                    to={"/patients/edit/${patient.PATIENTID}"}
+                    to={`/patients/${patient.PATIENTID}`}
                   >
                     Edit
                   </Link>
