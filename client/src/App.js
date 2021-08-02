@@ -9,7 +9,6 @@ import AddPatient from "./components/patients/AddPatient";
 import EditPatient from "./components/patients/EditPatient";
 import EditWard from "./components/wards/EditWard";
 
-
 function App() {
   return (
     <Router>
@@ -39,12 +38,12 @@ function App() {
           <Route exact path="/patients/add">
             <AddPatient />
           </Route>
-          <Route exact path="/patients/edit/:id">
+          <Route exact path="/patients/:id">
             <EditPatient />
           </Route>
-          <Route exact path="/wards/edit/:id">
+          <Route exact path="/wards/:id">
             <EditWard />
-          </Route>  
+          </Route>
         </Switch>
       </div>
     </Router>
