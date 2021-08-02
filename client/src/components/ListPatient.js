@@ -78,12 +78,12 @@ const Patient = ({searchValue}) => {
                             <th scope="col">Patient ID</th>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
-                            
-                            <th scope="col">DOB</th>
                             <th scope="col">Gender</th>
+                            <th scope="col">DOB</th>
+                        
                             <th scope="col">Diagnosis</th>
-                            <th scope="col">Hospitalized_date</th>
-                            <th scope="col">Discharged_date</th>
+                            <th scope="col">Hospitalized Date</th>
+                            <th scope="col">Discharged Date</th>
                             <th scope="col">Bill ID</th>
                             <th>Action</th>
           
