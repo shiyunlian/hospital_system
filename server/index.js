@@ -541,7 +541,7 @@ app.get("/insurances", (req, res) => {
 });
 
 //set port, listen for requests
-const PORT = 8090;
+const PORT = 8020;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
