@@ -1,6 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 /****************************************************************************************
  * Create a file for editing a patient and create stateful component addPatient
@@ -8,7 +8,6 @@ import { useHistory, useParams } from "react-router-dom";
 const url = "http://localhost:4000/patients";
 const EditPatient = () => {
   let history = useHistory();
-  const { id } = useParams();
 
   const [patient, setPatient] = useState({
     PATIENTID: "",
@@ -38,7 +37,7 @@ const EditPatient = () => {
     setPatient({ ...patient, [e.target.name]: e.target.value });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios.get(`${url}/{PATIENTID}`).then((response) => {
       setPatient(response.data);
     });

@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Link as NavLink } from "react-router-dom";
-
-import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
-
+import { Navbar, NavbarBrand, Container } from "reactstrap";
 const url = "http://localhost:4000/wards";
 /***************************************************************
  Create a file for showing Ward list and delete records
@@ -51,7 +48,7 @@ const Ward = () => {
                 <td>
                   <Link
                     class="btn btn-outline-primary mr-2"
-                    to={"/wards/edit/${ward.WARDID}"}
+                    to={`/wards/${ward.WARDID}`}
                   >
                     Edit
                   </Link>

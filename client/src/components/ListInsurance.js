@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { Link as NavLink } from "react-router-dom";
-
-import { Navbar, Nav, NavItem, NavbarBrand, Container } from "reactstrap";
+import { Navbar, NavbarBrand, Container } from "reactstrap";
 
 /***************************************************************
  Create a file for showing insurance list and delete records
@@ -21,12 +18,6 @@ const Insurance = () => {
   }, []);
 
   if (!insurances) return null;
-
-  const deleteInsurance = (id) => {
-    axios.delete(`${url}/${id}`).then(() => {
-      alert("Insurance record deleted!");
-    });
-  };
 
   return (
     <div className="container">
