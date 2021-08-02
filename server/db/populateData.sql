@@ -31,10 +31,10 @@ insert into patient values('P10001', 'Mike','Newton','1978-2-3','M','COVID-19','
 insert into patient values('P10002', 'David','Taylor','1959-10-11','M','COVID-19','2020-12-8','2021-2-2','B10002');
 insert into patient values('P10003', 'John','Smith','1987-8-21','M','COVID-19','2020-12-8','2021-2-2','B10003');
 insert into patient values('P10004', 'Jack','Davis','1975-4-23','M','COVID-19','2020-12-8','2021-2-2','B10004');
-insert into patient values('P10005', 'Steve','Miller','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','B10005');
-insert into patient values('P10006', 'John','Smith','1987-8-21','M','COVID-19','2020-12-8','2021-2-2','B10003');
-insert into patient values('P10007', 'Jack','Davis','1975-4-23','M','COVID-19','2020-12-8','2021-2-2','B10004');
-insert into patient values('P10008', 'Steve','Miller','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','B10005');
+insert into patient values('P10005', 'Steve','Miller','1987-12-23','M','COVID-19','2020-12-8','2021-2-2','B10005');
+insert into patient values('P10006', 'John','Davis','1984-5-21','M','COVID-19','2020-12-8','2021-2-2','B10006');
+insert into patient values('P10007', 'Jack','Taylor','1978-4-3','M','COVID-19','2020-12-8','2021-2-2','B10007');
+insert into patient values('P10008', 'Steve','Newton','1967-12-3','M','COVID-19','2020-12-8','2021-2-2','B10008');
 
 insert into staffHasPatient values('S10001','P10001');
 insert into staffHasPatient values('S10001','P10002');
