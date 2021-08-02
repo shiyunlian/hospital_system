@@ -21,11 +21,10 @@ import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ListItems from "./ListItems";
-import { Component } from "react";
 
 const SignInHeader = (props) => {
   const classes = useStyles();
-  
+
   const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
@@ -75,7 +74,7 @@ const SignInHeader = (props) => {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
-              onChange = {(event) => props.getSearchValue(event.target.value)}
+              onChange={(event) => props.getSearchValue(event.target.value)}
             />
           </div>
           <div className={classes.grow} />

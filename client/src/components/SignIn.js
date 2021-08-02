@@ -14,7 +14,6 @@ import {
 } from "@material-ui/core/";
 
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Image from "./image.jpg"; // Import using relative path
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -41,7 +40,6 @@ const SignIn = () => {
 
   return (
     <>
-      {/* <img src={Image} alt="hospital" /> */}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
