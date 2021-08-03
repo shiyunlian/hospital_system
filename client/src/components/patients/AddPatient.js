@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 /****************************************************************************************
  * Create a file for adding a patient and create stateful component addPatient
  *****************************************************************************************/
@@ -36,7 +36,7 @@ const AddPatient = () => {
     setPatient({ ...patient, [e.target.name]: e.target.value });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios.get(`${url}/{PATIENTID}`).then((response) => {
       setPatient(response.data);
     });

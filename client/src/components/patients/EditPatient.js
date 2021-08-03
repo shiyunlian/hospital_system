@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 /****************************************************************************************
  * Create a file for editing a patient and create stateful component addPatient
  *****************************************************************************************/

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 /****************************************************************************************
  * Create a file for editing a ward and create stateful component addward
  *****************************************************************************************/
@@ -21,19 +21,6 @@ const EditWard = () => {
   const onInputChange = (e) => {
     setWard({ ...ward, [e.target.name]: e.target.value });
   };
-
-  /*
-   const onSubmit = e => {
-    e.preventDefault();
-    axios.post(url, ward)
-    .then((response) => {
-       setWard(response.data);
-     
-    });
-    
-    history.push("/wards");
-    };
-    */
 
   useEffect(() => {
     axios.get(`${url}/{WARDID}`).then((response) => {
