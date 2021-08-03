@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 /****************************************************************************************
@@ -36,18 +36,14 @@ const AddPatient = () => {
     setPatient({ ...patient, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    axios.get(`${url}/{PATIENTID}`).then((response) => {
-      setPatient(response.data);
-    });
-  }, []);
-
   const onSubmit = (e) => {
     e.preventDefault();
     axios.post(url, patient).then((response) => {
       setPatient(response.data);
     });
-
+    axios.get(url).then((response) => {
+      setPatient(response.data);
+    });
     history.push("/patients");
   };
 

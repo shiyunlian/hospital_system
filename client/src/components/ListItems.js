@@ -10,13 +10,6 @@ const ListItems = () => {
   return (
     <div>
       <List>
-        <ListItem button component={Link} to="/login">
-          <ListItemIcon>
-            <PeopleIcon />
-          </ListItemIcon>
-          <ListItemText primary="Home" />
-        </ListItem>
-
         <ListItem button component={Link} to="/patients">
           <ListItemIcon>
             <PeopleIcon />
@@ -51,9 +44,6 @@ const ListItems = () => {
           </ListItemIcon>
           <ListItemText primary="More" />
         </ListItem>
-
-        
-
       </List>
     </div>
   );

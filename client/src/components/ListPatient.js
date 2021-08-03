@@ -12,13 +12,6 @@ const url = "http://localhost:4000/patients";
 const Patient = ({ searchValue }) => {
   const [patients, setPatient] = useState([]);
 
-  // useEffect(() => {
-  //   axios.get(url).then((response) => {
-  //     console.log("PATEINTs: "+response.data)
-  //     setPatient(response.data);
-  //   });
-  // }, []);
-  // if (!patients) return null;
   useEffect(() => {
     loadPatients();
   }, []);
@@ -28,22 +21,6 @@ const Patient = ({ searchValue }) => {
       setPatient(response.data);
     });
   };
-
-  //Get request using Axios http
-  /*
-    const loadPatients = async () => {
-        const result = await axios.get("http://localhost:8000/patients");
-        setPatient(result.data.reverse());
-    };
-    */
-
-  //delete patient records using axios http
-  /*
-    const deletePatient = async id => {
-        await axios.delete('http://localhost:8000/patients/' + id);
-        loadPatients();
-    };
-    */
 
   const deletePatient = (id) => {
     axios.delete(`${url}/${id}`).then(() => {

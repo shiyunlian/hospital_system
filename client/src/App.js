@@ -17,9 +17,6 @@ function App() {
           <Route exact path="/">
             <HomeScreen />
           </Route>
-          <Route exact path="/login">
-            <PatientScreen />
-          </Route>
           <Route exact path="/patients">
             <PatientScreen />
           </Route>

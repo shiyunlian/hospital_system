@@ -27,7 +27,7 @@ const Header = () => {
           <Typography variant="h6" className={classes.title}>
             Hospital Information System
           </Typography>
-          <Button color="inherit" component={Link} to="/login">
+          <Button color="inherit" component={Link} to="/patients">
             Sign in
           </Button>
         </Toolbar>
