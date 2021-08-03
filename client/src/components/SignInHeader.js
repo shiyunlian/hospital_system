@@ -10,10 +10,7 @@ import {
   Divider,
   IconButton,
   Badge,
-  Grid,
   Button,
-  Paper,
-  Container,
   InputBase,
 } from "@material-ui/core";
 import useStyles from "./styles";
@@ -25,7 +22,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ListItems from "./ListItems";
 
-const SignInHeader = () => {
+const SignInHeader = (props) => {
   const classes = useStyles();
 
   const [open, setOpen] = useState(true);
@@ -77,6 +74,7 @@ const SignInHeader = () => {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
+              onChange={(event) => props.getSearchValue(event.target.value)}
             />
           </div>
           <div className={classes.grow} />

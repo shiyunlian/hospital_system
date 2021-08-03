@@ -2,9 +2,11 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import useStyles from "./styles";
 import SignInHeader from "./SignInHeader";
-import ListWard from "./ListWard";
+import ListInsurance from "./ListInsurance";
 
-export default function WardRecord() {
+
+
+export default function InsuranceRecord() {
   const classes = useStyles();
 
   return (
@@ -13,7 +15,7 @@ export default function WardRecord() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Grid item xs={12}>
-          <ListWard />
+          <ListInsurance />
         </Grid>
       </main>
     </div>
